@@ -36,6 +36,9 @@ class AppSettings:
 def _resolve_repo_root() -> Path:
     current = Path(__file__).resolve()
     for parent in current.parents:
+        if (parent / "backend").exists() and (parent / "configs").exists() and (parent / "data").exists():
+            return parent
+    for parent in current.parents:
         if (parent / "configs").exists() and (parent / "data").exists():
             return parent
     return current.parents[4]

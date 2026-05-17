@@ -1,0 +1,45 @@
+slug: world_cup_2026
+name: FIFA World Cup 2026
+edition: men's
+start_date: 2026-06-11
+end_date: 2026-07-19
+host_countries:
+  - Canada
+  - Mexico
+  - United States
+host_cities:
+  - Toronto
+  - Vancouver
+  - Guadalajara
+  - Mexico City
+  - Monterrey
+  - Atlanta
+  - Boston
+  - Dallas
+  - Houston
+  - Kansas City
+  - Los Angeles
+  - Miami
+  - New York New Jersey
+  - Philadelphia
+  - San Francisco Bay Area
+  - Seattle
+format:
+  group_count: 12
+  teams_per_group: 4
+  advancing_rules:
+    top_two_per_group: 2
+    best_third_place_count: 8
+  knockout_rounds:
+    - round_of_32
+    - round_of_16
+    - quarterfinal
+    - semifinal
+    - third_place
+    - final
+refresh_sources:
+  fifa_reference: https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums
+  fifa_qualified_teams: https://www.fifa.com/en/articles/world-cup-2026-who-has-qualified?searchOverlay=1
+  openfootball_json: https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json
+  football_data_api: https://api.football-data.org/v4/competitions/WC/matches
+

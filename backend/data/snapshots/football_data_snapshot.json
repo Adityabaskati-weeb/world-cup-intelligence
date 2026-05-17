@@ -1,0 +1,6 @@
+{
+  "source": "football-data.org",
+  "status": "unavailable",
+  "reason": "FOOTBALL_DATA_API_TOKEN is not configured.",
+  "matches": []
+}
