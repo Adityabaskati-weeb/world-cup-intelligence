@@ -1,0 +1,104 @@
+{
+  "best_cv_score": -0.000826,
+  "best_params": {
+    "learning_rate": 0.08,
+    "max_depth": 3,
+    "n_estimators": 80
+  },
+  "cv_folds": 5,
+  "cv_ranked_results": [
+    {
+      "mean_test_score": -0.000826,
+      "params": {
+        "learning_rate": 0.08,
+        "max_depth": 3,
+        "n_estimators": 80
+      },
+      "rank": 1,
+      "std_test_score": 9e-06
+    },
+    {
+      "mean_test_score": -0.000826,
+      "params": {
+        "learning_rate": 0.08,
+        "max_depth": 4,
+        "n_estimators": 80
+      },
+      "rank": 1,
+      "std_test_score": 9e-06
+    },
+    {
+      "mean_test_score": -0.0041,
+      "params": {
+        "learning_rate": 0.08,
+        "max_depth": 3,
+        "n_estimators": 60
+      },
+      "rank": 3,
+      "std_test_score": 4.6e-05
+    },
+    {
+      "mean_test_score": -0.0041,
+      "params": {
+        "learning_rate": 0.08,
+        "max_depth": 4,
+        "n_estimators": 60
+      },
+      "rank": 3,
+      "std_test_score": 4.6e-05
+    },
+    {
+      "mean_test_score": -0.009253,
+      "params": {
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "n_estimators": 80
+      },
+      "rank": 5,
+      "std_test_score": 0.000106
+    }
+  ],
+  "leakage_report": {
+    "constant_features": [],
+    "duplicate_feature_rows": 0,
+    "duplicate_rows": 0,
+    "leaked_feature_names": [],
+    "null_feature_counts": {}
+  },
+  "metrics": {
+    "best_cv_score": -0.000826,
+    "generalization_gap_accuracy": 0.0,
+    "generalization_gap_macro_f1": 0.0,
+    "test_accuracy": 1.0,
+    "test_brier_score": 1e-06,
+    "test_log_loss": 0.000816,
+    "test_macro_f1": 1.0,
+    "test_macro_precision": 1.0,
+    "test_macro_recall": 1.0,
+    "test_roc_auc": 1.0,
+    "train_accuracy": 1.0,
+    "train_brier_score": 1e-06,
+    "train_log_loss": 0.000808,
+    "train_macro_f1": 1.0,
+    "train_macro_precision": 1.0,
+    "train_macro_recall": 1.0,
+    "train_roc_auc": 1.0,
+    "validation_accuracy": 1.0,
+    "validation_brier_score": 1e-06,
+    "validation_log_loss": 0.0008,
+    "validation_macro_f1": 1.0,
+    "validation_macro_f1_gain_vs_baseline": 0.0,
+    "validation_macro_precision": 1.0,
+    "validation_macro_recall": 1.0,
+    "validation_roc_auc": 1.0
+  },
+  "random_seed": 2026,
+  "selected_model_kind": "tuned",
+  "split_sizes": {
+    "test": 5,
+    "train": 14,
+    "validation": 5
+  },
+  "used_stratify": true,
+  "version": "xg-gradientboost-v4"
+}

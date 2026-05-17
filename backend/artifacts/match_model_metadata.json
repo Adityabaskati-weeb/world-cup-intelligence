@@ -1,0 +1,92 @@
+{
+  "best_cv_score": 1.0,
+  "best_params": {
+    "clf__C": 0.25,
+    "clf__class_weight": null
+  },
+  "cv_folds": 4,
+  "cv_ranked_results": [
+    {
+      "mean_test_score": 1.0,
+      "params": {
+        "clf__C": 0.25,
+        "clf__class_weight": null
+      },
+      "rank": 1,
+      "std_test_score": 0.0
+    },
+    {
+      "mean_test_score": 1.0,
+      "params": {
+        "clf__C": 0.25,
+        "clf__class_weight": "balanced"
+      },
+      "rank": 1,
+      "std_test_score": 0.0
+    },
+    {
+      "mean_test_score": 1.0,
+      "params": {
+        "clf__C": 1.0,
+        "clf__class_weight": null
+      },
+      "rank": 1,
+      "std_test_score": 0.0
+    },
+    {
+      "mean_test_score": 1.0,
+      "params": {
+        "clf__C": 1.0,
+        "clf__class_weight": "balanced"
+      },
+      "rank": 1,
+      "std_test_score": 0.0
+    },
+    {
+      "mean_test_score": 1.0,
+      "params": {
+        "clf__C": 4.0,
+        "clf__class_weight": null
+      },
+      "rank": 1,
+      "std_test_score": 0.0
+    }
+  ],
+  "leakage_report": {
+    "constant_features": [],
+    "duplicate_feature_rows": 0,
+    "duplicate_rows": 0,
+    "leaked_feature_names": [],
+    "null_feature_counts": {}
+  },
+  "metrics": {
+    "best_cv_score": 1.0,
+    "generalization_gap_accuracy": 0.0,
+    "generalization_gap_macro_f1": 0.0,
+    "test_accuracy": 1.0,
+    "test_log_loss": 0.331601,
+    "test_macro_f1": 1.0,
+    "test_macro_precision": 1.0,
+    "test_macro_recall": 1.0,
+    "train_accuracy": 1.0,
+    "train_log_loss": 0.326954,
+    "train_macro_f1": 1.0,
+    "train_macro_precision": 1.0,
+    "train_macro_recall": 1.0,
+    "validation_accuracy": 1.0,
+    "validation_log_loss": 0.338436,
+    "validation_macro_f1": 1.0,
+    "validation_macro_f1_gain_vs_baseline": 0.0,
+    "validation_macro_precision": 1.0,
+    "validation_macro_recall": 1.0
+  },
+  "random_seed": 2026,
+  "selected_model_kind": "tuned",
+  "split_sizes": {
+    "test": 5,
+    "train": 14,
+    "validation": 5
+  },
+  "used_stratify": true,
+  "version": "match-logreg-v3"
+}

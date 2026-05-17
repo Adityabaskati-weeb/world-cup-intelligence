@@ -126,7 +126,7 @@ def test_xg_training_logs_generalization_metrics() -> None:
     artifact = train_xg_model(synthetic_xg_frame())
     payload = load_artifact("xg_model.joblib")
     assert payload is not None
-    assert artifact.version == "xg-xgboost-v3"
+    assert artifact.version == "xg-gradientboost-v4"
     assert "generalization_gap_macro_f1" in payload["metrics"]
     assert payload["split_sizes"]["test"] > 0
 
@@ -135,7 +135,7 @@ def test_penalty_training_persists_dual_model_metadata() -> None:
     artifact = train_penalty_models(synthetic_penalty_frame())
     payload = load_artifact("penalty_model.joblib")
     assert payload is not None
-    assert artifact.version == "penalty-xgboost-v3"
+    assert artifact.version == "penalty-gradientboost-v4"
     assert "placement" in payload["best_params"]
     assert "conversion" in payload["best_params"]
     assert "placement_test_accuracy" in payload["metrics"]

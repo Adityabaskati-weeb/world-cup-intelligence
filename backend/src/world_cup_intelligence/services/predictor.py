@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-import pandas as pd
+import numpy as np
 
 from world_cup_intelligence.data.repository import SnapshotRepository
 from world_cup_intelligence.schemas.api import MatchPredictionRequest, MatchPredictionResponse, MomentumRead, PredictionFactor
@@ -88,7 +88,7 @@ class MatchPredictorService:
     def _factor_payload(
         self,
         artifact: dict[str, Any],
-        frame: pd.DataFrame,
+        frame: np.ndarray,
         request: MatchPredictionRequest,
         features: dict[str, float],
     ) -> tuple[list[str], list[PredictionFactor]]:
@@ -207,7 +207,7 @@ class MatchPredictorService:
         if artifact is None:
             raise ModelArtifactUnavailableError("match")
 
-        frame = pd.DataFrame([features], columns=MATCH_FEATURES)
+        frame = np.array([[features[feature_name] for feature_name in MATCH_FEATURES]], dtype=float)
         probabilities = artifact["model"].predict_proba(frame)[0]
         classes = list(artifact["classes"])
         lookup = {label: float(probability) for label, probability in zip(classes, probabilities, strict=True)}

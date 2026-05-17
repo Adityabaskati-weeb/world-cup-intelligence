@@ -9,7 +9,10 @@ __pycache__/
 *.log
 backend/.coverage
 backend/.mypy_cache/
-backend/artifacts/
+backend/artifacts/*
+!backend/artifacts/*.joblib
+!backend/artifacts/*_metadata.json
+backend/artifacts/.write-test
 backend/pytest-cache-files-*/
 backend/src/*.egg-info/
 .soccerdata-cache/

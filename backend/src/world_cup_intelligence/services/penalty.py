@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import pandas as pd
+import numpy as np
 
 from world_cup_intelligence.data.repository import SnapshotRepository
 from world_cup_intelligence.schemas.api import PenaltyPredictionRequest, PenaltyPredictionResponse
@@ -46,7 +46,7 @@ class PenaltyService:
             raise ModelArtifactUnavailableError("penalty")
 
         feature_columns = list(artifact["features"])
-        frame = pd.DataFrame([features], columns=feature_columns)
+        frame = np.array([[features[column] for column in feature_columns]], dtype=float)
         placement_model = artifact["placement_model"]
         conversion_model = artifact["conversion_model"]
 

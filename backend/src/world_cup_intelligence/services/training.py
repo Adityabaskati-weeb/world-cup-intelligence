@@ -7,12 +7,12 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.base import clone
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
-from xgboost import XGBClassifier
 
 from world_cup_intelligence.config import artifact_path
 from world_cup_intelligence.core.logging import get_logger
@@ -268,21 +268,17 @@ def train_xg_model(frame: pd.DataFrame) -> ModelArtifact:
     with start_run(
         experiment_suffix="xg-model",
         run_name="train-xg-gradient-boosting",
-        tags={"pipeline": "training", "model_family": "xgboost"},
+        tags={"pipeline": "training", "model_family": "gradient_boosting"},
     ):
-        estimator = XGBClassifier(
-            n_estimators=60,
+        estimator = GradientBoostingClassifier(
+            n_estimators=80,
             max_depth=4,
             learning_rate=0.08,
-            subsample=0.9,
-            colsample_bytree=0.9,
-            eval_metric="logloss",
             random_state=RANDOM_SEED,
-            n_jobs=1,
         )
         selection = _select_estimator(
             baseline_estimator=estimator,
-            param_grid={"n_estimators": [40, 60], "max_depth": [3, 4], "learning_rate": [0.05, 0.08]},
+            param_grid={"n_estimators": [60, 80], "max_depth": [3, 4], "learning_rate": [0.05, 0.08]},
             split=split,
             scoring="neg_log_loss",
             evaluator=_evaluate_binary_model,
@@ -305,7 +301,7 @@ def train_xg_model(frame: pd.DataFrame) -> ModelArtifact:
             "generalization_gap_accuracy": _safe_gap(train_eval.metrics, test_eval.metrics, "accuracy"),
             "best_cv_score": float(selection["best_cv_score"]),
         }
-        version = "xg-xgboost-v3"
+        version = "xg-gradientboost-v4"
         artifact = {
             "model": final_model,
             "features": XG_FEATURES,
@@ -335,7 +331,7 @@ def train_xg_model(frame: pd.DataFrame) -> ModelArtifact:
             metrics=metrics,
             metadata_name="xg_model_metadata",
             metadata_payload=metadata,
-            extra_params={"objective": "binary:logistic", "selected_model_kind": selection["selected_kind"]},
+            extra_params={"objective": "gradient_boosting", "selected_model_kind": selection["selected_kind"]},
         )
         logger.info("Trained xG model with test_accuracy=%.4f", test_eval.metrics.get("accuracy", 0.0))
         return ModelArtifact(str(path), version, artifact["training_window"], artifact["sample_size"])
@@ -352,38 +348,30 @@ def train_penalty_models(frame: pd.DataFrame) -> ModelArtifact:
     with start_run(
         experiment_suffix="penalty-model",
         run_name="train-penalty-gradient-boosting",
-        tags={"pipeline": "training", "model_family": "xgboost"},
+        tags={"pipeline": "training", "model_family": "gradient_boosting"},
     ):
-        placement_estimator = XGBClassifier(
-            n_estimators=50,
+        placement_estimator = GradientBoostingClassifier(
+            n_estimators=70,
             max_depth=3,
             learning_rate=0.12,
-            subsample=0.95,
-            colsample_bytree=0.9,
-            eval_metric="mlogloss",
             random_state=RANDOM_SEED,
-            n_jobs=1,
         )
-        conversion_estimator = XGBClassifier(
-            n_estimators=50,
+        conversion_estimator = GradientBoostingClassifier(
+            n_estimators=70,
             max_depth=3,
             learning_rate=0.08,
-            subsample=0.95,
-            colsample_bytree=0.9,
-            eval_metric="logloss",
             random_state=RANDOM_SEED,
-            n_jobs=1,
         )
         placement_selection = _select_estimator(
             baseline_estimator=placement_estimator,
-            param_grid={"n_estimators": [40, 50], "max_depth": [3, 4], "learning_rate": [0.08, 0.12]},
+            param_grid={"n_estimators": [60, 70], "max_depth": [3, 4], "learning_rate": [0.08, 0.12]},
             split=placement_split,
             scoring="neg_log_loss",
             evaluator=_evaluate_multiclass_model,
         )
         conversion_selection = _select_estimator(
             baseline_estimator=conversion_estimator,
-            param_grid={"n_estimators": [40, 50], "max_depth": [2, 3], "learning_rate": [0.05, 0.08]},
+            param_grid={"n_estimators": [60, 70], "max_depth": [2, 3], "learning_rate": [0.05, 0.08]},
             split=conversion_split,
             scoring="neg_log_loss",
             evaluator=_evaluate_binary_model,
@@ -430,7 +418,7 @@ def train_penalty_models(frame: pd.DataFrame) -> ModelArtifact:
             "conversion_best_cv_score": float(conversion_selection["best_cv_score"]),
         }
 
-        version = "penalty-xgboost-v3"
+        version = "penalty-gradientboost-v4"
         artifact = {
             "placement_model": placement_model,
             "conversion_model": conversion_model,
