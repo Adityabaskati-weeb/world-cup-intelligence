@@ -34,7 +34,11 @@ class AppSettings:
 
 
 def _resolve_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
+    current = Path(__file__).resolve()
+    for parent in current.parents:
+        if (parent / "configs").exists() and (parent / "data").exists():
+            return parent
+    return current.parents[4]
 
 
 def _env_value(name: str) -> str | None:
