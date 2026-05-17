@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { api, type Fixture, type Standing, type TournamentCurrent, type TournamentSimulation } from "../lib/api";
 import { BracketView } from "../components/BracketView";
 import { GroupGrid } from "../components/GroupGrid";
+import { api, type Fixture, type Standing, type TournamentCurrent, type TournamentSimulation } from "../lib/api";
 
 export function TournamentHub() {
   const [tournament, setTournament] = useState<TournamentCurrent | null>(null);
@@ -30,9 +30,10 @@ export function TournamentHub() {
           Built for the June 11, 2026 to July 19, 2026 tournament window, with config-driven refreshes for qualifiers,
           future draws, and the next World Cup cycle.
         </p>
+        <p className="hero-copy">Runs against the live API when available and falls back to the bundled 2026 demo snapshot when it is not.</p>
         <div className="hero-stats">
-          <div><span>Hosts</span><strong>{tournament?.host_countries.join(" • ")}</strong></div>
-          <div><span>Format</span><strong>48 teams • 12 groups • Round of 32</strong></div>
+          <div><span>Hosts</span><strong>{tournament?.host_countries.join(" / ")}</strong></div>
+          <div><span>Format</span><strong>48 teams / 12 groups / Round of 32</strong></div>
           <div><span>Update cadence</span><strong>Yearly backfill + tournament sync</strong></div>
         </div>
       </section>
@@ -55,7 +56,7 @@ export function TournamentHub() {
             <article key={fixture.match_id} className="fixture-card">
               <div className="match-meta">
                 <span>{fixture.group ? `Group ${fixture.group}` : fixture.stage.replaceAll("_", " ")}</span>
-                <span>{fixture.date} • {fixture.kickoff_local}</span>
+                <span>{fixture.date} / {fixture.kickoff_local}</span>
               </div>
               <strong>{fixture.home_team} vs {fixture.away_team}</strong>
               <small>{fixture.venue}</small>
@@ -76,4 +77,3 @@ export function TournamentHub() {
     </div>
   );
 }
-

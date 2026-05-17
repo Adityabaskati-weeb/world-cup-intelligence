@@ -1,8 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
-import { api, type KeeperProfile, type PenaltyPrediction, type PlayerProfile } from "../lib/api";
+import { api, type KeeperProfile, type KickerProfile, type PenaltyPrediction } from "../lib/api";
 
 export function PenaltyLabPage() {
-  const [players, setPlayers] = useState<PlayerProfile[]>([]);
+  const [kickers, setKickers] = useState<KickerProfile[]>([]);
   const [keepers, setKeepers] = useState<KeeperProfile[]>([]);
   const [playerId, setPlayerId] = useState("harry-kane");
   const [keeperId, setKeeperId] = useState("emiliano-martinez");
@@ -10,8 +10,14 @@ export function PenaltyLabPage() {
 
   useEffect(() => {
     void api.getPlayers().then((payload) => {
-      setPlayers(payload.players);
+      setKickers(payload.kickers);
       setKeepers(payload.keepers);
+      if (payload.kickers.length > 0 && !payload.kickers.some((player) => player.player_id === playerId)) {
+        setPlayerId(payload.kickers[0].player_id);
+      }
+      if (payload.keepers.length > 0 && !payload.keepers.some((keeper) => keeper.keeper_id === keeperId)) {
+        setKeeperId(payload.keepers[0].keeper_id);
+      }
     });
   }, []);
 
@@ -34,7 +40,7 @@ export function PenaltyLabPage() {
           <label>
             Kicker
             <select value={playerId} onChange={(event) => setPlayerId(event.target.value)}>
-              {players.map((player) => <option key={player.player_id} value={player.player_id}>{player.player_name}</option>)}
+              {kickers.map((player) => <option key={player.player_id} value={player.player_id}>{player.player_name}</option>)}
             </select>
           </label>
           <label>
@@ -75,4 +81,3 @@ export function PenaltyLabPage() {
     </div>
   );
 }
-

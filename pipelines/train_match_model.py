@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
+from world_cup_intelligence.orchestration.workflows import PipelineOrchestrator
 from world_cup_intelligence.services.training import train_match_model
 
 
@@ -19,6 +20,10 @@ def synthetic_match_frame() -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    artifact = train_match_model(synthetic_match_frame())
-    print(artifact)
+    orchestrator = PipelineOrchestrator()
 
+    def _run() -> None:
+        artifact = train_match_model(synthetic_match_frame())
+        print(artifact)
+
+    orchestrator.execute(workflow_name="train_match_model", steps=[("train_match_model", _run)])

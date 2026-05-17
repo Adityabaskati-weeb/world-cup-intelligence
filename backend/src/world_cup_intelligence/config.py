@@ -6,10 +6,11 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from world_cup_intelligence.core.settings import get_settings
 
 
 def repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+    return get_settings().repo_root
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -38,7 +39,8 @@ class CycleConfig:
 
 @lru_cache(maxsize=1)
 def get_tournament_config() -> TournamentConfig:
-    payload = load_yaml(repo_root() / "configs" / "tournaments" / "world_cup_2026.yaml")
+    settings = get_settings()
+    payload = load_yaml(repo_root() / "configs" / "tournaments" / f"{settings.active_tournament_slug}.yaml")
     payload["start_date"] = str(payload["start_date"])
     payload["end_date"] = str(payload["end_date"])
     return TournamentConfig(**payload)
@@ -51,10 +53,17 @@ def get_cycle_config() -> CycleConfig:
 
 
 def snapshot_path(*parts: str) -> Path:
-    return repo_root().joinpath("data", "snapshots", *parts)
+    return get_settings().snapshot_dir.joinpath(*parts)
 
 
 def artifact_path(filename: str) -> Path:
-    target = repo_root() / "backend" / "artifacts"
-    target.mkdir(parents=True, exist_ok=True)
+    target = get_settings().artifact_dir
     return target / filename
+
+
+def metadata_path(*parts: str) -> Path:
+    return get_settings().metadata_dir.joinpath(*parts)
+
+
+def docs_path(*parts: str) -> Path:
+    return get_settings().docs_dir.joinpath(*parts)

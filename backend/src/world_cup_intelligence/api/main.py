@@ -84,7 +84,8 @@ def get_teams() -> dict[str, list[dict[str, str]]]:
 @app.get("/api/players")
 def get_players() -> dict[str, list[dict[str, str]]]:
     keepers = repository.penalty_profiles()["keepers"]
-    return {"players": repository.players(), "keepers": keepers}
+    kickers = repository.penalty_profiles()["kickers"]
+    return {"players": repository.players(), "kickers": kickers, "keepers": keepers}
 
 
 @app.post("/api/predict/match", response_model=MatchPredictionResponse)
@@ -122,4 +123,3 @@ def predict_penalty(request: PenaltyPredictionRequest) -> PenaltyPredictionRespo
 @app.post("/api/simulate/tournament", response_model=TournamentSimulationResponse)
 def simulate_tournament(request: TournamentSimulationRequest) -> TournamentSimulationResponse:
     return simulation_service.simulate(request)
-

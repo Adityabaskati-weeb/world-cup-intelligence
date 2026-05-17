@@ -12,6 +12,9 @@ backend/.mypy_cache/
 backend/artifacts/
 backend/pytest-cache-files-*/
 backend/src/*.egg-info/
+.soccerdata-cache/
+.runtime/
+mlruns/
 frontend/coverage/
 frontend/dist/
 frontend/node_modules/
