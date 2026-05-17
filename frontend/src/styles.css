@@ -113,7 +113,7 @@ a {
 .app-shell {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 18px 24px 40px;
+  padding: 18px 24px 44px;
 }
 
 .app-shell-landing {
@@ -123,13 +123,13 @@ a {
 .topbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 26px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
+  padding: 18px 22px;
+  border: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
+  border-radius: 30px;
   background: var(--topbar-bg);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-soft);
@@ -145,7 +145,7 @@ a {
 
 .brand-block {
   display: grid;
-  gap: 4px;
+  gap: 6px;
 }
 
 .brand-kicker,
@@ -159,23 +159,24 @@ a {
 }
 
 .brand-title {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   font-family: "Iowan Old Style", "Georgia", "Palatino Linotype", serif;
-  font-size: clamp(1.95rem, 3.2vw, 2.8rem);
+  font-size: clamp(2.05rem, 3.35vw, 2.95rem);
   letter-spacing: -0.04em;
   line-height: 0.95;
 }
 
 .brand-subtitle {
-  margin: 8px 0 0;
-  max-width: 58ch;
+  margin: 4px 0 0;
+  max-width: 56ch;
+  line-height: 1.6;
   color: var(--muted);
 }
 
 .nav-theme-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -183,20 +184,20 @@ a {
 .nav-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
   overflow-x: auto;
 }
 
 .nav-frame {
-  padding: 8px;
-  border-radius: 22px;
+  padding: 10px;
+  border-radius: 24px;
   background: var(--nav-frame-bg);
   border: 1px solid var(--line);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .nav-chip {
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 999px;
   min-height: 44px;
   display: inline-flex;
@@ -205,6 +206,8 @@ a {
   white-space: nowrap;
   background: var(--chip-bg);
   border: 1px solid var(--line);
+  font-weight: 700;
+  letter-spacing: 0.01em;
   transition:
     transform 180ms ease,
     background 220ms ease,
@@ -240,7 +243,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px;
+  padding: 7px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--nav-frame-bg);
@@ -272,6 +275,10 @@ a {
 .content-shell {
   display: grid;
   gap: 22px;
+}
+
+.content-shell > * {
+  animation: pageEnter 360ms ease both;
 }
 
 .page-grid {
@@ -887,6 +894,7 @@ a {
   margin-top: 0;
   color: var(--muted);
   max-width: 60ch;
+  line-height: 1.65;
 }
 
 .story-stack {
@@ -927,6 +935,12 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.55;
+}
+
+.refresh-summary {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .refresh-card-head {
@@ -1290,7 +1304,7 @@ a {
 
 .landing-page {
   display: grid;
-  gap: 24px;
+  gap: 28px;
 }
 
 .landing-hero,
@@ -1312,7 +1326,7 @@ a {
 
 .landing-hero {
   min-height: calc(100vh - 120px);
-  padding: 40px;
+  padding: 44px;
   display: grid;
   align-content: space-between;
 }
@@ -1334,7 +1348,7 @@ a {
 
 .landing-copy {
   display: grid;
-  gap: 20px;
+  gap: 22px;
   max-width: 760px;
 }
 
@@ -1382,7 +1396,7 @@ a {
 }
 
 .landing-side-card {
-  padding: 18px;
+  padding: 20px;
   box-shadow: var(--shadow-soft);
 }
 
@@ -1525,7 +1539,7 @@ a {
 }
 
 .landing-transition-panel {
-  padding: 34px;
+  padding: 38px;
 }
 
 .landing-transition-copy h2,
@@ -1559,13 +1573,22 @@ a {
 .landing-module-card {
   padding: 24px;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   min-height: 240px;
 }
 
 .landing-module-card h3 {
   margin: 0;
   font-size: 1.2rem;
+}
+
+.landing-module-kicker {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .landing-text-link {
@@ -1597,6 +1620,18 @@ a {
 
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

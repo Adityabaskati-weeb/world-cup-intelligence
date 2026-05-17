@@ -1,0 +1,17 @@
+{
+  "name": "Matchflow",
+  "short_name": "Matchflow",
+  "description": "A cinematic football intelligence platform for World Cup 2026 with tournament pulse, explainable forecasts, xG storytelling, and penalty-duel reasoning.",
+  "start_url": "/#/",
+  "display": "standalone",
+  "background_color": "#071019",
+  "theme_color": "#071019",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

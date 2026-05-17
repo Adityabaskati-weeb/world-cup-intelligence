@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="28" fill="#071019" />
+  <rect x="12" y="12" width="104" height="104" rx="22" fill="url(#fieldGlow)" stroke="rgba(255,255,255,0.12)" />
+  <path d="M64 22V106" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+  <path d="M24 44H48V84H24" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M104 44H80V84H104" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linejoin="round" />
+  <circle cx="64" cy="64" r="16" fill="#F7F2E7" stroke="#D9B15F" stroke-width="3" />
+  <path d="M31 92C42 81 50 75 64 70C76 66 88 60 97 47" stroke="#0F8F7F" stroke-width="6" stroke-linecap="round" />
+  <path d="M35 98C48 87 58 80 73 75C84 71 93 65 101 54" stroke="#D9B15F" stroke-width="3" stroke-linecap="round" opacity="0.95" />
+  <defs>
+    <linearGradient id="fieldGlow" x1="20" y1="16" x2="112" y2="114" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2335" />
+      <stop offset="1" stop-color="#0A1521" />
+    </linearGradient>
+  </defs>
+</svg>

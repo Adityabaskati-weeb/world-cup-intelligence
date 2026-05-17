@@ -19,7 +19,7 @@ const sceneImages = {
 
 const storyScenes = [
   {
-    label: "Anticipation",
+    label: "Tunnel hush",
     title: "Before the first whistle, the tournament already has a pulse.",
     copy:
       "Stadium lights, crowd pressure, and host-city energy set the emotional context. The platform begins there instead of skipping straight to widgets.",
@@ -46,24 +46,28 @@ const storyScenes = [
 
 const moduleHighlights = [
   {
-    title: "Tournament Hub",
+    kicker: "Tournament pulse",
+    title: "Tournament Pulse",
     copy:
       "Track group races, fixtures, and the 48-team bracket through a cleaner football-first reading of the 2026 format.",
     to: "/tournament-hub",
   },
   {
-    title: "Match Predictor",
+    kicker: "Forecasting",
+    title: "Match Center",
     copy:
       "Read likely winners through team strength, recent form, home-host context, and pressure-state framing instead of generic model output.",
     to: "/match-center",
   },
   {
+    kicker: "Shot craft",
     title: "xG Explorer",
     copy:
       "Move from team shot territory to individual finishing patterns, then understand where the best chances are actually forming.",
     to: "/xg-explorer",
   },
   {
+    kicker: "Pressure duel",
     title: "Penalty Lab",
     copy:
       "Turn a shootout into a scouted duel between taker and keeper, with placement tendencies and conversion context baked in.",
@@ -161,16 +165,16 @@ export function LandingPage() {
             <p className="eyebrow">Football intelligence for World Cup 2026</p>
             <h1>Feel the tournament first. Then read the hidden game.</h1>
             <p className="landing-lead">
-              Matchflow is a cinematic football intelligence experience for the men&apos;s FIFA World Cup 2026, built
-              to move from stadium emotion into explainable prediction, chance quality, and knockout pressure with
-              intention.
+              Matchflow is a cinematic football reasoning platform for the men&apos;s FIFA World Cup 2026. It moves
+              from floodlights and matchday tension into explainable forecasts, chance quality, and knockout pressure
+              without flattening the sport into raw percentages.
             </p>
             <div className="landing-action-row">
               <Link className="accent-button" to="/tournament-hub">
-                Enter tournament hub
+                Enter tournament pulse
               </Link>
               <Link className="ghost-button ghost-button-light" to="/match-center">
-                Start with predictions
+                Open match center
               </Link>
             </div>
           </div>
@@ -182,7 +186,7 @@ export function LandingPage() {
               <p>{openingFixture ? `${openingFixture.venue} | ${openingFixture.date}` : "The first night of the tournament sets the emotional tone."}</p>
             </div>
             <div className="landing-side-card landing-side-card-muted">
-              <span className="landing-side-label">Why Matchflow</span>
+              <span className="landing-side-label">Why it lands</span>
               <strong>Emotion, reasoning, and tournament pulse</strong>
               <p>
                 Instead of dropping a generic win probability, Matchflow shows why the edge exists, where pressure
@@ -205,7 +209,7 @@ export function LandingPage() {
       <section className="panel landing-signal-panel">
         <div className="landing-section-head">
           <p className="eyebrow">Tournament pulse</p>
-          <h2>The platform exposes the signal layer, not just the headline prediction.</h2>
+          <h2>The platform keeps the signal layer readable, honest, and close to the football story.</h2>
           <p>
             Live fixture sync, tournament reference snapshots, xG intelligence, and penalty scouting each show their
             own readiness state so users can trust what they are seeing.
@@ -274,11 +278,12 @@ export function LandingPage() {
       <section className="landing-module-section">
         <div className="landing-section-head">
           <p className="eyebrow">Platform surfaces</p>
-          <h2>Four connected ways to understand the same tournament.</h2>
+          <h2>Four connected lenses. One tournament story.</h2>
         </div>
         <div className="landing-module-grid">
           {moduleHighlights.map((module) => (
             <article key={module.title} className="landing-module-card">
+              <p className="landing-module-kicker">{module.kicker}</p>
               <h3>{module.title}</h3>
               <p>{module.copy}</p>
               <Link to={module.to} className="landing-text-link">
@@ -293,14 +298,14 @@ export function LandingPage() {
         <div className="landing-scrim" />
         <div className="landing-closing-copy">
           <p className="eyebrow">Ready for the full tournament view?</p>
-          <h2>Step from the story into the working intelligence layer.</h2>
+          <h2>Step from the atmosphere into the working intelligence layer.</h2>
           <p>
             Explore the group races, simulate the bracket, study chance quality, and compare penalty duels without
             losing the feeling of the competition itself.
           </p>
           <div className="landing-action-row">
             <Link className="accent-button" to="/tournament-hub">
-              Open tournament hub
+              Open tournament pulse
             </Link>
             <Link className="ghost-button ghost-button-light" to="/penalty-lab">
               Jump to penalty lab

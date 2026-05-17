@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { applyRouteMeta, applyThemeMeta } from "./lib/siteMeta";
 import { LandingPage } from "./routes/LandingPage";
 import { MatchPredictorPage } from "./routes/MatchPredictorPage";
 import { PenaltyLabPage } from "./routes/PenaltyLabPage";
@@ -10,8 +11,8 @@ type ThemeMode = "dark" | "light";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/tournament-hub", label: "Tournament Hub" },
-  { to: "/match-center", label: "Match Predictor" },
+  { to: "/tournament-hub", label: "Tournament Pulse" },
+  { to: "/match-center", label: "Match Center" },
   { to: "/xg-explorer", label: "xG Explorer" },
   { to: "/penalty-lab", label: "Penalty Lab" },
 ];
@@ -41,18 +42,27 @@ export default function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem("matchflow-theme", theme);
+    applyThemeMeta(theme);
   }, [theme]);
+
+  useEffect(() => {
+    applyRouteMeta(location.pathname);
+    const canScroll = typeof window.scrollTo === "function" && !window.navigator.userAgent.toLowerCase().includes("jsdom");
+    if (canScroll) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
 
   return (
     <div className={`app-shell${isLanding ? " app-shell-landing" : ""}`}>
       <header className={`topbar${isLanding ? " topbar-landing" : ""}`}>
         <div className="brand-block">
-          <p className="brand-kicker">{isLanding ? "Football intelligence platform" : "Tournament intelligence platform"}</p>
+          <p className="brand-kicker">{isLanding ? "Cinematic football reasoning platform" : "Tournament pulse and match reasoning"}</p>
           <p className="brand-title">Matchflow</p>
           <p className="brand-subtitle">
             {isLanding
-              ? "A cinematic football intelligence experience for World Cup 2026, built to move from matchday emotion into prediction, xG, and penalty pressure."
-              : "Prediction, chance quality, and knockout tension in one football-native decision layer."}
+              ? "A football-native product for World Cup 2026 that moves from matchday atmosphere into explainable forecasts, shot-quality storytelling, and penalty pressure."
+              : "Tournament pulse, match reasoning, shot craft, and shootout pressure in one readable football decision layer."}
           </p>
         </div>
         <div className="nav-theme-row">

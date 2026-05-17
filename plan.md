@@ -1,8 +1,8 @@
-# World Cup Intelligence 2026
+# Matchflow
 
 ## Summary
 - Build a new standalone public GitHub repo named `world-cup-intelligence` for the **men’s FIFA World Cup 2026**, with the first release tailored to the live 2026 tournament cycle.
-- Treat the product as a **2026 Tournament Hub** that unifies the three ideas into one experience: `Match Predictor`, `xG Explorer`, `Penalty Lab`, plus a tournament bracket simulator that uses the penalty model to resolve knockout draws.
+- Treat the product as a **2026 football intelligence platform** that unifies the three ideas into one experience: `Match Center`, `xG Explorer`, `Penalty Lab`, plus a tournament bracket simulator that uses the penalty model to resolve knockout draws.
 - Design the app so it refreshes every year for the **World Cup + qualifiers** cycle, while remaining easy to retarget to the next edition by changing tournament config rather than rewriting code.
 - Lock current tournament facts into the plan: as of **May 17, 2026**, the tournament runs **June 11, 2026 to July 19, 2026**, has **48 teams**, **12 groups of four**, and a **round of 32** with the top two teams plus the eight best third-placed teams advancing.
 

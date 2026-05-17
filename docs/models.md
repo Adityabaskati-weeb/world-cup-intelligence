@@ -1,6 +1,6 @@
 # Model Engineering
 
-World Cup Intelligence keeps the three prediction systems aligned around the same engineering rules:
+Matchflow keeps the three prediction systems aligned around the same engineering rules:
 
 - deterministic seeds
 - explicit train, validation, and test splits
@@ -9,7 +9,7 @@ World Cup Intelligence keeps the three prediction systems aligned around the sam
 - MLflow logging for metrics and metadata
 - artifact-backed inference so the API and training pipelines stay in sync
 
-## Match Predictor
+## Match Center
 
 - Family: multinomial logistic regression
 - Features: Elo delta, form delta, goal-trend delta, rest-days delta, confederation gap, host flag
@@ -18,14 +18,14 @@ World Cup Intelligence keeps the three prediction systems aligned around the sam
 
 ## xG Model
 
-- Family: XGBoost binary classifier
+- Family: gradient boosting binary classifier
 - Features: distance, angle, minute, pressure, game state, body-part code, shot-type code
 - Selection: baseline versus tuned model through stratified CV
 - Serving artifact: `backend/artifacts/xg_model.joblib`
 
 ## Penalty Lab
 
-- Family: two XGBoost classifiers
+- Family: two gradient boosting classifiers
 - Placement model predicts target zone
 - Conversion model predicts score probability
 - Features: pressure, footedness code, keeper bias, match state

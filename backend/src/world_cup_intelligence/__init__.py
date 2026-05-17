@@ -1,2 +1,1 @@
-"""World Cup Intelligence backend package."""
-
+"""Matchflow backend package."""

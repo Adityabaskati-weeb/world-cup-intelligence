@@ -3,11 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World Cup Intelligence 2026</title>
+    <title>Matchflow | Football intelligence for World Cup 2026</title>
+    <meta
+      name="description"
+      content="Matchflow is a cinematic football intelligence platform for the men's FIFA World Cup 2026, blending tournament pulse, explainable match forecasts, xG storytelling, and penalty-duel reasoning."
+    />
+    <meta name="application-name" content="Matchflow" />
+    <meta name="apple-mobile-web-app-title" content="Matchflow" />
+    <meta name="theme-color" content="#071019" />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Matchflow" />
+    <meta property="og:title" content="Matchflow | Football intelligence for World Cup 2026" />
+    <meta
+      property="og:description"
+      content="A cinematic football reasoning platform for World Cup 2026 with tournament pulse, explainable forecasts, xG storytelling, and penalty-duel intelligence."
+    />
+    <meta property="og:url" content="https://matchflow-production.vercel.app/" />
+    <meta property="og:image" content="https://matchflow-production.vercel.app/social-preview.svg" />
+    <meta property="og:image:alt" content="Matchflow football intelligence preview artwork" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Matchflow | Football intelligence for World Cup 2026" />
+    <meta
+      name="twitter:description"
+      content="Tournament pulse, explainable forecasts, xG storytelling, and penalty-duel intelligence in one cinematic football product."
+    />
+    <meta name="twitter:image" content="https://matchflow-production.vercel.app/social-preview.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://images.pexels.com" />
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      body {
+        margin: 0;
+        background: #071019;
+        color: #eef3f7;
+        font-family: Aptos, "Segoe UI Variable", "Trebuchet MS", sans-serif;
+      }
+
+      html[data-theme="light"] body {
+        background: #f4efe7;
+        color: #162230;
+      }
+
+      .boot-splash {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at top left, rgba(217, 177, 95, 0.18), transparent 28%),
+          radial-gradient(circle at top right, rgba(15, 143, 127, 0.18), transparent 30%),
+          linear-gradient(180deg, #071019 0%, #09131e 45%, #050a12 100%);
+      }
+
+      html[data-theme="light"] .boot-splash {
+        background:
+          radial-gradient(circle at top left, rgba(138, 90, 21, 0.16), transparent 30%),
+          radial-gradient(circle at top right, rgba(11, 122, 110, 0.14), transparent 28%),
+          linear-gradient(180deg, #faf6f0 0%, #f3eee6 42%, #ece6dd 100%);
+      }
+
+      .boot-shell {
+        width: min(620px, 100%);
+        padding: 32px;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(10, 19, 30, 0.74);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(18px);
+      }
+
+      html[data-theme="light"] .boot-shell {
+        border-color: rgba(18, 34, 48, 0.12);
+        background: rgba(255, 251, 246, 0.78);
+        box-shadow: 0 22px 48px rgba(28, 39, 53, 0.12);
+      }
+
+      .boot-label {
+        margin: 0 0 10px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #0f8f7f;
+      }
+
+      .boot-title {
+        margin: 0;
+        font-family: "Iowan Old Style", Georgia, "Palatino Linotype", serif;
+        font-size: clamp(2.4rem, 8vw, 4.8rem);
+        letter-spacing: -0.05em;
+        line-height: 0.94;
+      }
+
+      .boot-copy {
+        margin: 16px 0 0;
+        line-height: 1.7;
+        color: rgba(238, 243, 247, 0.82);
+      }
+
+      html[data-theme="light"] .boot-copy {
+        color: rgba(22, 34, 48, 0.74);
+      }
+
+      .boot-meter {
+        width: 100%;
+        height: 12px;
+        margin-top: 24px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      html[data-theme="light"] .boot-meter {
+        background: rgba(18, 34, 48, 0.08);
+      }
+
+      .boot-meter::after {
+        content: "";
+        display: block;
+        width: 34%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(120deg, #d39a3e, #0f8f7f);
+        animation: boot-slide 1.35s ease-in-out infinite alternate;
+      }
+
+      @keyframes boot-slide {
+        from {
+          transform: translateX(0%);
+        }
+
+        to {
+          transform: translateX(180%);
+        }
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var stored = window.localStorage.getItem("matchflow-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.dataset.theme = theme;
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) {
+            themeMeta.setAttribute("content", theme === "light" ? "#f4efe7" : "#071019");
+          }
+        } catch (_error) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Matchflow",
+        "url": "https://matchflow-production.vercel.app/",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Web",
+        "description": "Matchflow is a cinematic football intelligence platform for the men's FIFA World Cup 2026, blending tournament pulse, explainable match forecasts, xG storytelling, and penalty-duel reasoning."
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-splash" role="status" aria-live="polite">
+        <div class="boot-shell">
+          <p class="boot-label">Football intelligence platform</p>
+          <h1 class="boot-title">Matchflow</h1>
+          <p class="boot-copy">
+            Loading tournament pulse, explainable forecasts, shot-quality storytelling, and penalty pressure into one
+            football-native matchday experience.
+          </p>
+          <div class="boot-meter" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

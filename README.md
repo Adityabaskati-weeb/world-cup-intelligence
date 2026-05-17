@@ -1,6 +1,6 @@
-# World Cup Intelligence 2026
+# Matchflow
 
-World Cup Intelligence 2026 is a full-stack football intelligence platform for the men's FIFA World Cup 2026 cycle. It combines a cinematic tournament hub, explainable match reasoning, xG exploration, penalty-duel scouting, and a knockout simulator in one config-driven project that can be refreshed for future World Cup years.
+Matchflow is a full-stack football intelligence platform for the men's FIFA World Cup 2026 cycle. It combines a cinematic tournament pulse, explainable match reasoning, xG exploration, penalty-duel scouting, and a knockout simulator in one config-driven project that can be refreshed for future World Cup years.
 
 The codebase is being maintained as a production-quality AI engineering project inspired by:
 
@@ -14,8 +14,8 @@ The codebase is being maintained as a production-quality AI engineering project 
 
 - FastAPI backend with tournament, fixtures, standings, prediction, xG, penalty, simulation, and system-overview endpoints
 - React frontend with four connected surfaces:
-  - `Tournament Hub`
-  - `Match Predictor`
+  - `Tournament Pulse`
+  - `Match Center`
   - `xG Explorer`
   - `Penalty Lab`
 - A football-first product layer that emphasizes tournament pulse, sync-state transparency, explainable momentum, and pressure storytelling instead of generic model scores
@@ -90,26 +90,27 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173/#/).
 
 ## Public deployment
 
-### Production path
+### Current public deployment
 
-The intended production setup is:
+The public deployment currently runs as:
 
 - `frontend/` on Vercel
-- `backend/` on Render
+- `backend/` on Vercel
 
 The repo now includes:
 
 - [frontend/vercel.json](./frontend/vercel.json) for SPA routing on Vercel
-- [render.yaml](./render.yaml) for the FastAPI backend on Render
+- [render.yaml](./render.yaml) as an alternate backend blueprint when the platform needs a dedicated long-running service
 - [docs/deployment.md](./docs/deployment.md) with the deployment checklist and environment setup
 
-### Public demo
+Live URLs:
 
-The GitHub Pages workflow in [.github/workflows/pages.yml](./.github/workflows/pages.yml) should be treated as a secondary static-host path only. It is no longer a standalone snapshot demo because the frontend does not ship a built-in fake backend.
+- Frontend: [https://matchflow-production.vercel.app/](https://matchflow-production.vercel.app/)
+- Backend: [https://matchflow-production-api.vercel.app/api/health](https://matchflow-production-api.vercel.app/api/health)
 
-Current demo URL:
+### Optional scale-up path
 
-- [https://adityabaskati-weeb.github.io/world-cup-intelligence/](https://adityabaskati-weeb.github.io/world-cup-intelligence/)
+The Render blueprint remains in the repo because the platform may still outgrow a serverless backend once live refresh orchestration, heavier model workloads, or more persistent data jobs are introduced.
 
 ## Pipeline commands
 
@@ -143,6 +144,7 @@ Copy or adapt [.env.example](./.env.example) for local development. The most imp
 
 - `WCI_ACTIVE_TOURNAMENT`
 - `WCI_LOG_LEVEL`
+- `WCI_PROJECT_NAME`
 - `MLFLOW_TRACKING_URI`
 - `SOCCERDATA_DIR`
 - `FOOTBALL_DATA_API_TOKEN`
@@ -151,3 +153,4 @@ For the frontend, copy or adapt [frontend/.env.example](./frontend/.env.example)
 
 - `VITE_API_BASE_URL`
 - `VITE_PUBLIC_BASE`
+- `VITE_SITE_URL`

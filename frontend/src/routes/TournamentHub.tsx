@@ -203,7 +203,7 @@ export function TournamentHub() {
       <section className="hero-panel hero-panel-large">
         <div className="hero-header">
           <div>
-            <p className="eyebrow">Tournament Hub</p>
+            <p className="eyebrow">Tournament Pulse</p>
             <h1>{tournament?.name ?? "Loading tournament hub..."}</h1>
           </div>
           <span className={`status-pill ${runtimeMode === "live_api" ? "live" : "demo"}`}>
@@ -225,7 +225,7 @@ export function TournamentHub() {
         <RefreshStatusStrip
           status={refreshStatus}
           title="Tournament pulse"
-          subtitle="The hub surfaces which feeds are live, which are snapshot-backed, and where operator attention is still needed."
+          subtitle="See which tournament reads are live, which are reference-backed, and where the signal is starting to age."
         />
       ) : refreshError ? (
         <StatusMessage title="Sync-state panel is unavailable." tone="info">

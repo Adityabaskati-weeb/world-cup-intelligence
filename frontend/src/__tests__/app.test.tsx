@@ -59,11 +59,12 @@ describe("App shell", () => {
     expect(screen.getByText("Matchflow")).toBeInTheDocument();
     expect(await screen.findByRole("heading", { name: "Feel the tournament first. Then read the hidden game." })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Tournament Hub" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Match Predictor" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Tournament Pulse" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Match Center" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "xG Explorer" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Penalty Lab" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Dark" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Light" })).toBeInTheDocument();
+    expect(document.title).toBe("Football Intelligence for World Cup 2026 | Matchflow");
   });
 });

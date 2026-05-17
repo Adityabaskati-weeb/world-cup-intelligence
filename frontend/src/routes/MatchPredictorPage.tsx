@@ -167,8 +167,8 @@ export function MatchPredictorPage() {
       <section className="hero-panel hero-panel-large">
         <div className="hero-header">
           <div>
-            <p className="eyebrow">Match Predictor</p>
-            <h1>Turn a fixture into a pre-match briefing</h1>
+            <p className="eyebrow">Match Center</p>
+            <h1>Turn a fixture into a football briefing</h1>
           </div>
           <span className="section-badge">{stageLabel(stage)}</span>
         </div>
@@ -203,7 +203,7 @@ export function MatchPredictorPage() {
         <RefreshStatusStrip
           status={refreshStatus}
           title="Signal readiness"
-          subtitle="Matchflow exposes which data layers are live, snapshot-backed, or waiting for operator attention before you trust the pre-match read."
+          subtitle="Matchflow shows which layers are live, which are reference-backed, and when the pre-match read needs caution."
           compact
         />
       ) : refreshError ? (
@@ -216,8 +216,8 @@ export function MatchPredictorPage() {
         <section className="panel">
           <div className="section-header">
             <div>
-              <h2>Build the scenario</h2>
-              <small>Choose the fixture and decide how much tournament context matters.</small>
+              <h2>Build the match read</h2>
+              <small>Choose the fixture and tune how much tournament context should shape the briefing.</small>
             </div>
             <button
               className="ghost-button"
@@ -309,7 +309,7 @@ export function MatchPredictorPage() {
         <section className="panel">
           <div className="section-header">
             <div>
-              <h2>{prediction ? `${prediction.projected_winner} edge` : "Matchup outlook"}</h2>
+              <h2>{prediction ? `${prediction.projected_winner} edge` : "Match reading"}</h2>
               <small>{matchupBriefing}</small>
             </div>
             {prediction ? <span className="section-badge">{prediction.mode.replaceAll("_", " ")}</span> : null}

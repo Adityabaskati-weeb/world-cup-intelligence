@@ -134,7 +134,7 @@ def get_settings() -> AppSettings:
     default_tracking_uri = _default_tracking_uri(repo=repo, runtime_root=runtime_root, mlruns_dir=mlruns_dir)
 
     return AppSettings(
-        project_name=os.getenv("WCI_PROJECT_NAME", "World Cup Intelligence 2026"),
+        project_name=os.getenv("WCI_PROJECT_NAME", "Matchflow"),
         active_tournament_slug=os.getenv("WCI_ACTIVE_TOURNAMENT", "world_cup_2026"),
         repo_root=repo,
         runtime_root=runtime_root,
@@ -144,7 +144,7 @@ def get_settings() -> AppSettings:
         artifact_dir=artifact_dir,
         docs_dir=docs_dir,
         mlflow_tracking_uri=_normalize_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", default_tracking_uri)),
-        mlflow_experiment_prefix=os.getenv("WCI_MLFLOW_EXPERIMENT_PREFIX", "world-cup-intelligence"),
+        mlflow_experiment_prefix=os.getenv("WCI_MLFLOW_EXPERIMENT_PREFIX", "matchflow"),
         log_level=os.getenv("WCI_LOG_LEVEL", "INFO").upper(),
         soccerdata_dir=soccerdata_dir,
         use_demo_data=_env_flag("WCI_USE_DEMO_DATA", True),

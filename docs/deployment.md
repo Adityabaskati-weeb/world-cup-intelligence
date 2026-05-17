@@ -1,9 +1,9 @@
 # Deployment
 
-`World Cup Intelligence 2026` should be deployed as a split-stack product:
+`Matchflow` is currently deployed as a split Vercel product:
 
 - `frontend/` on Vercel
-- `backend/` on Render
+- `backend/` on Vercel
 
 The checked-in GitHub Pages workflow is no longer a standalone demo path because the frontend now requires a real backend API. Treat it as a secondary static-host option only when it is pointed at a deployed backend.
 
@@ -33,14 +33,33 @@ Official references:
 - [Vercel monorepos](https://vercel.com/docs/monorepos)
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite)
 
-### Backend on Render
+### Backend on Vercel
 
-The repository includes [render.yaml](../render.yaml) as the Render Blueprint for the FastAPI service.
+The public production backend is currently deployed from `backend/` as a Vercel Python service. This keeps the frontend and API on one hosting platform while the product remains snapshot-backed or light enough for serverless operation.
 
 Suggested environment variables:
 
 - `WCI_ACTIVE_TOURNAMENT=world_cup_2026`
 - `WCI_LOG_LEVEL=INFO`
+- `WCI_PROJECT_NAME=Matchflow`
+- `FOOTBALL_DATA_API_TOKEN=<secret>`
+- `MLFLOW_TRACKING_URI=<secret or managed tracking target>`
+- `WCI_USE_DEMO_DATA=false`
+
+Notes:
+
+- The Vercel backend currently works well for the deployed snapshot-backed mode and public API contracts.
+- If you need persistent jobs, scheduled refreshes with longer runtimes, or a heavier model-serving path, move the API to Render without changing the frontend contract.
+
+### Optional backend on Render
+
+The repository still includes [render.yaml](../render.yaml) as the Render Blueprint for a longer-running FastAPI service.
+
+Suggested environment variables:
+
+- `WCI_ACTIVE_TOURNAMENT=world_cup_2026`
+- `WCI_LOG_LEVEL=INFO`
+- `WCI_PROJECT_NAME=Matchflow`
 - `WCI_USE_DEMO_DATA=false`
 - `FOOTBALL_DATA_API_TOKEN=<secret>`
 - `MLFLOW_TRACKING_URI=<secret or managed tracking target>`
@@ -57,13 +76,15 @@ Official references:
 
 ## Deploy checklist
 
-1. Create the Render backend service from `render.yaml`.
-2. Confirm the backend health endpoint responds at `https://<render-service>/api/health`.
+1. Create the Vercel backend project from `backend/` or redeploy the existing public API project.
+2. Confirm the backend health endpoint responds at `https://<backend-service>/api/health`.
 3. Create the Vercel frontend project from the same Git repository.
 4. Set the Vercel root directory to `frontend/`.
-5. Set `VITE_API_BASE_URL` in Vercel to the public Render backend URL.
-6. Deploy and verify route refreshes for `/`, `/match-center`, `/xg-explorer`, and `/penalty-lab`.
-7. Verify `GET /api/system/overview` on the Render URL for backend observability and readiness checks.
+5. Set `VITE_API_BASE_URL` in Vercel to the public backend URL.
+6. Set `VITE_SITE_URL` in Vercel to the public frontend URL.
+7. Deploy and verify route refreshes for `/`, `/match-center`, `/xg-explorer`, and `/penalty-lab`.
+8. Verify `GET /api/system/overview` on the backend URL for observability and readiness checks.
+9. If the backend needs longer-lived refresh jobs later, promote it to Render and update only `VITE_API_BASE_URL`.
 
 ## Post-deploy checks
 

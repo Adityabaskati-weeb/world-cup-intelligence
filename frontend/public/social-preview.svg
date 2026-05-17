@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#071019" />
+  <rect x="38" y="38" width="1124" height="554" rx="34" fill="url(#backdrop)" stroke="rgba(255,255,255,0.12)" />
+  <path d="M80 523C238 444 354 386 529 344C702 302 854 238 1030 114" stroke="#0F8F7F" stroke-width="24" stroke-linecap="round" opacity="0.92" />
+  <path d="M118 556C271 475 382 421 548 382C716 341 856 280 1012 169" stroke="#D9B15F" stroke-width="10" stroke-linecap="round" opacity="0.95" />
+  <circle cx="844" cy="208" r="68" fill="#F7F2E7" stroke="#D9B15F" stroke-width="10" />
+  <path d="M328 118V510" stroke="rgba(255,255,255,0.14)" stroke-width="4" />
+  <path d="M124 220H248V408H124" stroke="rgba(255,255,255,0.18)" stroke-width="4" />
+  <path d="M1076 220H952V408H1076" stroke="rgba(255,255,255,0.18)" stroke-width="4" />
+  <text x="100" y="188" fill="#0F8F7F" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" letter-spacing="5.2">FOOTBALL INTELLIGENCE PLATFORM</text>
+  <text x="100" y="296" fill="#F4F6F8" font-family="Iowan Old Style, Georgia, serif" font-size="98" font-weight="700" letter-spacing="-4">Matchflow</text>
+  <text x="100" y="364" fill="#E0E7EE" font-family="Aptos, Segoe UI, sans-serif" font-size="31" font-weight="600">Tournament pulse. Explainable forecasts. xG storytelling. Penalty pressure.</text>
+  <text x="100" y="432" fill="#D9B15F" font-family="Aptos, Segoe UI, sans-serif" font-size="28" font-weight="700">World Cup 2026 reasoning engine</text>
+  <rect x="98" y="478" width="378" height="56" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" />
+  <text x="132" y="514" fill="#F7F2E7" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="700">matchflow-production.vercel.app</text>
+  <defs>
+    <linearGradient id="backdrop" x1="126" y1="72" x2="1096" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1723" />
+      <stop offset="0.62" stop-color="#09131E" />
+      <stop offset="1" stop-color="#061019" />
+    </linearGradient>
+  </defs>
+</svg>

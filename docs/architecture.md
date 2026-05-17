@@ -1,6 +1,6 @@
 # Architecture
 
-World Cup Intelligence 2026 is being hardened as a production-oriented ML product rather than a notebook-first demo.
+Matchflow is being hardened as a production-oriented ML product rather than a notebook-first demo.
 
 ## Engineering principles
 

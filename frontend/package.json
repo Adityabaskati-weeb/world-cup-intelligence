@@ -1,8 +1,9 @@
 {
-  "name": "world-cup-intelligence-frontend",
+  "name": "matchflow-frontend",
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "description": "Cinematic football intelligence frontend for Matchflow.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -27,4 +28,3 @@
     "vitest": "^3.1.2"
   }
 }
-

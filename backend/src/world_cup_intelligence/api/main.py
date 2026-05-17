@@ -43,7 +43,7 @@ configure_logging()
 logger = get_logger(__name__)
 settings = get_settings()
 
-app = FastAPI(title="World Cup Intelligence 2026", version="0.1.0")
+app = FastAPI(title="Matchflow API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
