@@ -115,11 +115,11 @@ def get_settings() -> AppSettings:
     metadata_dir = data_dir / "metadata"
     artifact_dir = repo / "backend" / "artifacts"
     docs_dir = repo / "docs"
-    soccerdata_dir = Path(os.getenv("SOCCERDATA_DIR", str(repo / ".soccerdata-cache")))
+    soccerdata_dir = Path(os.getenv("SOCCERDATA_DIR", str(runtime_root / ".soccerdata-cache")))
     mlruns_dir = runtime_root / "mlruns"
     os.environ.setdefault("SOCCERDATA_DIR", str(soccerdata_dir))
 
-    for path in (data_dir, snapshot_dir, metadata_dir, artifact_dir, docs_dir, soccerdata_dir, mlruns_dir):
+    for path in (runtime_root, soccerdata_dir, mlruns_dir):
         path.mkdir(parents=True, exist_ok=True)
 
     default_tracking_uri = _default_tracking_uri(repo=repo, runtime_root=runtime_root, mlruns_dir=mlruns_dir)
