@@ -1,0 +1,18 @@
+cycle_slug: men_2026
+active_tournament: world_cup_2026
+refresh_jobs:
+  yearly_backfill:
+    cadence: yearly
+    description: Refresh historical national-team results and rebuild training tables.
+  post_window_retrain:
+    cadence: on_international_window_close
+    description: Recompute Elo and retrain baseline models after official windows.
+  qualifier_sync:
+    cadence: daily
+    description: Refresh fixtures and standings during qualifiers.
+  tournament_sync:
+    cadence: every_4_hours
+    window_start: 2026-06-11
+    window_end: 2026-07-19
+    description: Increase fixture sync frequency during the tournament.
+
