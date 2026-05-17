@@ -21,6 +21,7 @@ jobs:
       run:
         working-directory: frontend
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       VITE_API_BASE_URL: demo
       VITE_PUBLIC_BASE: /world-cup-intelligence/
     steps:
@@ -29,6 +30,8 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
