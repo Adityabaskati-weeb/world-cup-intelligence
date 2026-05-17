@@ -5,7 +5,7 @@ from typing import Any
 
 from world_cup_intelligence.data.repository import SnapshotRepository
 from world_cup_intelligence.schemas.api import XgPoint, XgProfileResponse
-from world_cup_intelligence.services.training import load_artifact
+from world_cup_intelligence.services.model_runtime import load_artifact
 
 
 class XgService:

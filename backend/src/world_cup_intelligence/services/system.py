@@ -14,7 +14,7 @@ from world_cup_intelligence.schemas.api import (
     SystemOverviewResponse,
     WorkflowOverview,
 )
-from world_cup_intelligence.services.training import load_artifact
+from world_cup_intelligence.services.model_runtime import load_artifact
 
 
 def runtime_mode_label(use_snapshot_data: bool) -> str:

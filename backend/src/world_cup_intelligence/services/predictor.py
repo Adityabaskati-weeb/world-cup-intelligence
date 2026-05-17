@@ -7,7 +7,7 @@ import pandas as pd
 from world_cup_intelligence.data.repository import SnapshotRepository
 from world_cup_intelligence.schemas.api import MatchPredictionRequest, MatchPredictionResponse, MomentumRead, PredictionFactor
 from world_cup_intelligence.services.errors import ModelArtifactUnavailableError
-from world_cup_intelligence.services.training import MATCH_FEATURES, load_artifact
+from world_cup_intelligence.services.model_runtime import MATCH_FEATURES, load_artifact
 
 
 FEATURE_LABELS = {

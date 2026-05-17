@@ -20,18 +20,7 @@ from world_cup_intelligence.mlops.evaluation import EvaluationResult, evaluate_b
 from world_cup_intelligence.mlops.leakage import LeakageReport, inspect_supervised_frame
 from world_cup_intelligence.mlops.splits import ClassificationSplit, build_classification_split
 from world_cup_intelligence.mlops.tracking import log_json_artifact, log_metrics, log_params, start_run
-
-
-MATCH_FEATURES = [
-    "elo_diff",
-    "form_diff",
-    "goal_diff_trend",
-    "rest_days_diff",
-    "confederation_gap",
-    "host_flag",
-]
-XG_FEATURES = ["distance", "angle", "minute", "pressure", "game_state", "body_part_code", "shot_type_code"]
-PENALTY_FEATURES = ["pressure", "footedness_code", "keeper_bias", "match_state"]
+from world_cup_intelligence.services.model_runtime import MATCH_FEATURES, PENALTY_FEATURES, XG_FEATURES
 RANDOM_SEED = 2026
 
 logger = get_logger(__name__)
