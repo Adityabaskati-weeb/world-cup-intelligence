@@ -121,6 +121,8 @@ def get_settings() -> AppSettings:
     snapshot_dir = data_dir / "snapshots"
     metadata_dir = data_dir / "metadata"
     artifact_dir = repo / "backend" / "artifacts"
+    if not artifact_dir.exists():
+        artifact_dir = repo / "artifacts"
     docs_dir = repo / "docs"
     soccerdata_dir = Path(os.getenv("SOCCERDATA_DIR", str(runtime_root / ".soccerdata-cache")))
     mlruns_dir = runtime_root / "mlruns"
