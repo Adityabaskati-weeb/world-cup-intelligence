@@ -1,6 +1,6 @@
 # World Cup Intelligence 2026
 
-World Cup Intelligence 2026 is a full-stack tournament analytics hub for the men's FIFA World Cup 2026 cycle. It combines a match predictor, xG explorer, penalty lab, and knockout simulator in one config-driven project that can be refreshed for future World Cup years.
+World Cup Intelligence 2026 is a full-stack football intelligence platform for the men's FIFA World Cup 2026 cycle. It combines a cinematic tournament hub, explainable match reasoning, xG exploration, penalty-duel scouting, and a knockout simulator in one config-driven project that can be refreshed for future World Cup years.
 
 The codebase is being maintained as a production-quality AI engineering project inspired by:
 
@@ -12,12 +12,13 @@ The codebase is being maintained as a production-quality AI engineering project 
 
 ## What is included
 
-- FastAPI backend with tournament, fixtures, standings, prediction, xG, penalty, and simulation endpoints
+- FastAPI backend with tournament, fixtures, standings, prediction, xG, penalty, simulation, and system-overview endpoints
 - React frontend with four connected surfaces:
   - `Tournament Hub`
   - `Match Predictor`
   - `xG Explorer`
   - `Penalty Lab`
+- A football-first product layer that emphasizes tournament pulse, sync-state transparency, explainable momentum, and pressure storytelling instead of generic model scores
 - Config-driven tournament and cycle files under `configs/`
 - Reference snapshots under `data/snapshots/`
 - Pipeline scripts for refreshing source data and training baseline models
@@ -42,6 +43,7 @@ world-cup-intelligence/
 ```
 
 See [docs/architecture.md](./docs/architecture.md) for the modular architecture baseline.
+See [docs/models.md](./docs/models.md) for the current ML workflow, evaluation, and reproducibility rules.
 
 ## Data sources
 
@@ -53,17 +55,11 @@ The implementation is designed around the following sources:
 - `StatsBomb Open Data` via `statsbombpy` for shot and penalty event data
 - `openfootball/worldcup.json` as a convenient public snapshot source for 2026 fixtures
 
-The checked-in snapshot is intentionally light so the app can run offline. Run the refresh pipeline to pull fuller tournament data.
+The checked-in snapshot is intentionally light so the backend can boot quickly in snapshot-backed mode. Run the refresh pipeline to pull fuller tournament data.
 
 ## Local development
 
-The frontend now has a built-in demo runtime. That means you can open the project with just the React app running, and all four surfaces still work from the checked-in snapshot data:
-
-- `Tournament Hub`
-- `Match Predictor`
-- `xG Explorer`
-- `Penalty Lab`
-- `Knockout simulator`
+The frontend is now a real API client only. That means every visible workflow expects the FastAPI backend to be available, even when the backend itself is serving snapshot-backed tournament data.
 
 ### Backend
 
@@ -83,24 +79,37 @@ npm run dev
 
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173/#/).
 
-- If the backend is running on `127.0.0.1:8000`, Vite proxies `/api` requests to it automatically.
-- If the backend is not running, the frontend falls back to the bundled World Cup 2026 demo data and keeps the same core functionality available in-browser.
+- If the backend is running on `127.0.0.1:8000`, the frontend calls it directly by default.
+- If the backend is not running, the frontend now fails explicitly with clear loading and error states instead of silently switching to mock data.
+
+## API highlights
+
+- `GET /api/refresh/status` exposes per-source sync state, timestamps, and operator-attention signals for tournament, fixture, xG, and penalty layers
+- `POST /api/predict/match` returns probabilities plus structured factors, momentum framing, and narrative bullets
+- `GET /api/system/overview` surfaces runtime mode, model metadata, workflow state, and request telemetry
 
 ## Public deployment
 
+### Production path
+
+The intended production setup is:
+
+- `frontend/` on Vercel
+- `backend/` on Render
+
+The repo now includes:
+
+- [frontend/vercel.json](./frontend/vercel.json) for SPA routing on Vercel
+- [render.yaml](./render.yaml) for the FastAPI backend on Render
+- [docs/deployment.md](./docs/deployment.md) with the deployment checklist and environment setup
+
 ### Public demo
 
-The repo now includes a GitHub Pages workflow in [.github/workflows/pages.yml](./.github/workflows/pages.yml). It builds the frontend in demo mode and publishes a public static version of the app.
+The GitHub Pages workflow in [.github/workflows/pages.yml](./.github/workflows/pages.yml) should be treated as a secondary static-host path only. It is no longer a standalone snapshot demo because the frontend does not ship a built-in fake backend.
 
-Expected Pages URL:
+Current demo URL:
 
 - [https://adityabaskati-weeb.github.io/world-cup-intelligence/](https://adityabaskati-weeb.github.io/world-cup-intelligence/)
-
-If the first Pages deployment does not publish automatically, enable **Settings -> Pages -> Build and deployment -> GitHub Actions** for the repository, then rerun the workflow.
-
-### Full-stack deployment
-
-For a live API-backed deployment, keep the frontend static and deploy the Python API separately. The existing [render.yaml](./render.yaml) is set up for the backend service and can be paired with Vercel, Render Static Sites, or another static host for the frontend.
 
 ## Pipeline commands
 
@@ -115,7 +124,7 @@ If `FOOTBALL_DATA_API_TOKEN` is present, the refresh pipeline will try live fixt
 
 ## Experiment tracking
 
-Training pipelines now log tracked runs through MLflow. By default, the local setup uses a writable runtime directory and chooses the most robust backend for that location: SQLite when a machine-local runtime path is available, and MLflow's file store when the project has to fall back to [.runtime](./.runtime/) inside a synced workspace such as OneDrive.
+Training pipelines now log tracked runs through MLflow. By default, the local setup prefers a SQLite tracking database when the runtime directory is outside the synced repository, and falls back to MLflow's portable local file store when the workspace is locked down. If you want a shared tracking server for team usage, set `MLFLOW_TRACKING_URI` explicitly.
 
 Example:
 
@@ -136,3 +145,9 @@ Copy or adapt [.env.example](./.env.example) for local development. The most imp
 - `WCI_LOG_LEVEL`
 - `MLFLOW_TRACKING_URI`
 - `SOCCERDATA_DIR`
+- `FOOTBALL_DATA_API_TOKEN`
+
+For the frontend, copy or adapt [frontend/.env.example](./frontend/.env.example) and set:
+
+- `VITE_API_BASE_URL`
+- `VITE_PUBLIC_BASE`

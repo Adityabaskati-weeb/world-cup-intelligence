@@ -10,12 +10,18 @@ RESULTS_URL = "https://raw.githubusercontent.com/martj42/international_results/m
 
 
 def fetch_international_results() -> None:
-    response = requests.get(RESULTS_URL, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(RESULTS_URL, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException:
+        if TARGET.exists():
+            print(f"Skipping international results fetch: network request failed. Keeping existing snapshot at {TARGET}")
+            return
+        raise
+
     TARGET.write_text(response.text, encoding="utf-8")
     print(f"Wrote historical results to {TARGET}")
 
 
 if __name__ == "__main__":
     fetch_international_results()
-

@@ -25,17 +25,15 @@ class SimulationService:
         noise = rng.uniform(-80, 80)
         adjusted = delta + noise
         if abs(adjusted) < 30:
-            kickers = self.repository.penalty_profiles()["kickers"]
-            keepers = self.repository.penalty_profiles()["keepers"]
-            home_kicker = kickers[0]["player_id"]
-            away_kicker = kickers[-1]["player_id"]
-            home_keeper = keepers[0]["keeper_id"]
-            away_keeper = keepers[-1]["keeper_id"]
+            home_kicker_profile = self.repository.kicker_for_team(home_team) or self.repository.penalty_profiles()["kickers"][0]
+            away_kicker_profile = self.repository.kicker_for_team(away_team) or self.repository.penalty_profiles()["kickers"][-1]
+            home_keeper_profile = self.repository.keeper_for_team(home_team) or self.repository.penalty_profiles()["keepers"][0]
+            away_keeper_profile = self.repository.keeper_for_team(away_team) or self.repository.penalty_profiles()["keepers"][-1]
             home_probability = self.penalty.predict(
-                request=self._penalty_request(home_kicker, away_keeper, pressure=0.85)
+                request=self._penalty_request(home_kicker_profile["player_id"], away_keeper_profile["keeper_id"], pressure=0.85)
             ).scoring_probability
             away_probability = self.penalty.predict(
-                request=self._penalty_request(away_kicker, home_keeper, pressure=0.85)
+                request=self._penalty_request(away_kicker_profile["player_id"], home_keeper_profile["keeper_id"], pressure=0.85)
             ).scoring_probability
             winner = home_team if home_probability >= away_probability else away_team
             return winner, "penalties"
@@ -125,4 +123,3 @@ class SimulationService:
             final=final,
             champion=champion,
         )
-

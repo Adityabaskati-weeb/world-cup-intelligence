@@ -7,15 +7,15 @@
       "actual_goals": 7,
       "sample_size": 28,
       "zones": [
-        {"zone": "central-box", "shots": 12, "xg": 3.18},
-        {"zone": "left-half-space", "shots": 7, "xg": 1.34},
-        {"zone": "right-half-space", "shots": 9, "xg": 1.9}
+        { "zone": "central-box", "shots": 12, "xg": 3.18 },
+        { "zone": "left-half-space", "shots": 7, "xg": 1.34 },
+        { "zone": "right-half-space", "shots": 9, "xg": 1.9 }
       ],
       "shots": [
-        {"player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 18, "x": 86.0, "y": 50.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"},
-        {"player_id": "raphinha", "player_name": "Raphinha", "minute": 27, "x": 80.0, "y": 37.0, "xg": 0.11, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play"},
-        {"player_id": "rodrygo", "player_name": "Rodrygo", "minute": 52, "x": 90.0, "y": 62.0, "xg": 0.21, "outcome": "Goal", "body_part": "Right Foot", "situation": "Counter"},
-        {"player_id": "bruno-guimaraes", "player_name": "Bruno Guimaraes", "minute": 74, "x": 72.0, "y": 48.0, "xg": 0.06, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play"}
+        { "player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 18, "x": 86.0, "y": 50.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "raphinha", "player_name": "Raphinha", "minute": 27, "x": 80.0, "y": 37.0, "xg": 0.11, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "rodrygo", "player_name": "Rodrygo", "minute": 52, "x": 90.0, "y": 62.0, "xg": 0.21, "outcome": "Goal", "body_part": "Right Foot", "situation": "Counter" },
+        { "player_id": "bruno-guimaraes", "player_name": "Bruno Guimaraes", "minute": 74, "x": 72.0, "y": 48.0, "xg": 0.06, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play" }
       ]
     },
     {
@@ -25,15 +25,15 @@
       "actual_goals": 6,
       "sample_size": 25,
       "zones": [
-        {"zone": "central-box", "shots": 10, "xg": 2.9},
-        {"zone": "left-channel", "shots": 8, "xg": 1.65},
-        {"zone": "right-channel", "shots": 7, "xg": 1.33}
+        { "zone": "central-box", "shots": 10, "xg": 2.9 },
+        { "zone": "left-channel", "shots": 8, "xg": 1.65 },
+        { "zone": "right-channel", "shots": 7, "xg": 1.33 }
       ],
       "shots": [
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 11, "x": 89.0, "y": 41.0, "xg": 0.29, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition"},
-        {"player_id": "dembele", "player_name": "Ousmane Dembele", "minute": 33, "x": 82.0, "y": 55.0, "xg": 0.13, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play"},
-        {"player_id": "griezmann", "player_name": "Antoine Griezmann", "minute": 59, "x": 74.0, "y": 46.0, "xg": 0.08, "outcome": "Blocked", "body_part": "Right Foot", "situation": "Set Piece"},
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 77, "x": 91.0, "y": 51.0, "xg": 0.35, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"}
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 11, "x": 89.0, "y": 41.0, "xg": 0.29, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "dembele", "player_name": "Ousmane Dembele", "minute": 33, "x": 82.0, "y": 55.0, "xg": 0.13, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "griezmann", "player_name": "Antoine Griezmann", "minute": 59, "x": 74.0, "y": 46.0, "xg": 0.08, "outcome": "Blocked", "body_part": "Right Foot", "situation": "Set Piece" },
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 77, "x": 91.0, "y": 51.0, "xg": 0.35, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" }
       ]
     },
     {
@@ -43,15 +43,69 @@
       "actual_goals": 5,
       "sample_size": 22,
       "zones": [
-        {"zone": "penalty-spot", "shots": 6, "xg": 1.9},
-        {"zone": "left-box", "shots": 8, "xg": 1.7},
-        {"zone": "right-box", "shots": 8, "xg": 1.5}
+        { "zone": "penalty-spot", "shots": 6, "xg": 1.9 },
+        { "zone": "left-box", "shots": 8, "xg": 1.7 },
+        { "zone": "right-box", "shots": 8, "xg": 1.5 }
       ],
       "shots": [
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 16, "x": 88.0, "y": 50.0, "xg": 0.32, "outcome": "Goal", "body_part": "Right Foot", "situation": "Penalty"},
-        {"player_id": "saka", "player_name": "Bukayo Saka", "minute": 36, "x": 85.0, "y": 38.0, "xg": 0.14, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play"},
-        {"player_id": "foden", "player_name": "Phil Foden", "minute": 61, "x": 77.0, "y": 57.0, "xg": 0.10, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Open Play"},
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 82, "x": 90.0, "y": 49.0, "xg": 0.25, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"}
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 16, "x": 88.0, "y": 50.0, "xg": 0.32, "outcome": "Goal", "body_part": "Right Foot", "situation": "Penalty" },
+        { "player_id": "saka", "player_name": "Bukayo Saka", "minute": 36, "x": 85.0, "y": 38.0, "xg": 0.14, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "foden", "player_name": "Phil Foden", "minute": 61, "x": 77.0, "y": 57.0, "xg": 0.1, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 82, "x": 90.0, "y": 49.0, "xg": 0.25, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" }
+      ]
+    },
+    {
+      "team_id": "argentina",
+      "label": "Argentina",
+      "total_xg": 5.46,
+      "actual_goals": 6,
+      "sample_size": 24,
+      "zones": [
+        { "zone": "central-box", "shots": 8, "xg": 2.36 },
+        { "zone": "left-half-space", "shots": 7, "xg": 1.64 },
+        { "zone": "right-half-space", "shots": 9, "xg": 1.46 }
+      ],
+      "shots": [
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 14, "x": 85.0, "y": 44.0, "xg": 0.22, "outcome": "Goal", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "julian-alvarez", "player_name": "Julian Alvarez", "minute": 34, "x": 87.0, "y": 54.0, "xg": 0.19, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 63, "x": 78.0, "y": 50.0, "xg": 0.11, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Set Piece" },
+        { "player_id": "alexis-mac-allister", "player_name": "Alexis Mac Allister", "minute": 81, "x": 90.0, "y": 58.0, "xg": 0.28, "outcome": "Goal", "body_part": "Right Foot", "situation": "Cutback" }
+      ]
+    },
+    {
+      "team_id": "portugal",
+      "label": "Portugal",
+      "total_xg": 5.72,
+      "actual_goals": 6,
+      "sample_size": 26,
+      "zones": [
+        { "zone": "central-box", "shots": 9, "xg": 2.44 },
+        { "zone": "left-channel", "shots": 8, "xg": 1.48 },
+        { "zone": "right-channel", "shots": 9, "xg": 1.8 }
+      ],
+      "shots": [
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 22, "x": 84.0, "y": 46.0, "xg": 0.18, "outcome": "Goal", "body_part": "Right Foot", "situation": "Set Piece" },
+        { "player_id": "bernardo-silva", "player_name": "Bernardo Silva", "minute": 41, "x": 83.0, "y": 59.0, "xg": 0.14, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "rafael-leao", "player_name": "Rafael Leao", "minute": 67, "x": 91.0, "y": 39.0, "xg": 0.27, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 78, "x": 75.0, "y": 49.0, "xg": 0.09, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play" }
+      ]
+    },
+    {
+      "team_id": "united-states",
+      "label": "United States",
+      "total_xg": 4.21,
+      "actual_goals": 4,
+      "sample_size": 20,
+      "zones": [
+        { "zone": "central-box", "shots": 6, "xg": 1.66 },
+        { "zone": "left-channel", "shots": 7, "xg": 1.14 },
+        { "zone": "right-channel", "shots": 7, "xg": 1.41 }
+      ],
+      "shots": [
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 19, "x": 84.0, "y": 45.0, "xg": 0.17, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "tim-weah", "player_name": "Tim Weah", "minute": 37, "x": 81.0, "y": 60.0, "xg": 0.12, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "weston-mckennie", "player_name": "Weston McKennie", "minute": 55, "x": 76.0, "y": 48.0, "xg": 0.09, "outcome": "Blocked", "body_part": "Header", "situation": "Set Piece" },
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 83, "x": 88.0, "y": 41.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Cutback" }
       ]
     }
   ],
@@ -64,15 +118,15 @@
       "actual_goals": 3,
       "sample_size": 9,
       "zones": [
-        {"zone": "left-inside-box", "shots": 4, "xg": 1.1},
-        {"zone": "central-box", "shots": 3, "xg": 1.0},
-        {"zone": "right-edge-box", "shots": 2, "xg": 0.31}
+        { "zone": "left-inside-box", "shots": 4, "xg": 1.1 },
+        { "zone": "central-box", "shots": 3, "xg": 1.0 },
+        { "zone": "right-edge-box", "shots": 2, "xg": 0.31 }
       ],
       "shots": [
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 11, "x": 89.0, "y": 41.0, "xg": 0.29, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition"},
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 44, "x": 86.0, "y": 39.0, "xg": 0.22, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play"},
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 77, "x": 91.0, "y": 51.0, "xg": 0.35, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"},
-        {"player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 84, "x": 80.0, "y": 48.0, "xg": 0.09, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Counter"}
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 11, "x": 89.0, "y": 41.0, "xg": 0.29, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 44, "x": 86.0, "y": 39.0, "xg": 0.22, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 77, "x": 91.0, "y": 51.0, "xg": 0.35, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "mbappe", "player_name": "Kylian Mbappe", "minute": 84, "x": 80.0, "y": 48.0, "xg": 0.09, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Counter" }
       ]
     },
     {
@@ -83,14 +137,14 @@
       "actual_goals": 2,
       "sample_size": 8,
       "zones": [
-        {"zone": "left-box", "shots": 5, "xg": 1.31},
-        {"zone": "central-box", "shots": 3, "xg": 0.57}
+        { "zone": "left-box", "shots": 5, "xg": 1.31 },
+        { "zone": "central-box", "shots": 3, "xg": 0.57 }
       ],
       "shots": [
-        {"player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 18, "x": 86.0, "y": 50.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"},
-        {"player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 39, "x": 83.0, "y": 42.0, "xg": 0.17, "outcome": "Saved", "body_part": "Right Foot", "situation": "Transition"},
-        {"player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 58, "x": 90.0, "y": 46.0, "xg": 0.31, "outcome": "Goal", "body_part": "Right Foot", "situation": "Cutback"},
-        {"player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 79, "x": 74.0, "y": 35.0, "xg": 0.08, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play"}
+        { "player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 18, "x": 86.0, "y": 50.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 39, "x": 83.0, "y": 42.0, "xg": 0.17, "outcome": "Saved", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 58, "x": 90.0, "y": 46.0, "xg": 0.31, "outcome": "Goal", "body_part": "Right Foot", "situation": "Cutback" },
+        { "player_id": "vinicius-jr", "player_name": "Vinicius Junior", "minute": 79, "x": 74.0, "y": 35.0, "xg": 0.08, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play" }
       ]
     },
     {
@@ -101,16 +155,72 @@
       "actual_goals": 2,
       "sample_size": 7,
       "zones": [
-        {"zone": "penalty-spot", "shots": 3, "xg": 1.0},
-        {"zone": "central-box", "shots": 4, "xg": 1.12}
+        { "zone": "penalty-spot", "shots": 3, "xg": 1.0 },
+        { "zone": "central-box", "shots": 4, "xg": 1.12 }
       ],
       "shots": [
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 16, "x": 88.0, "y": 50.0, "xg": 0.32, "outcome": "Goal", "body_part": "Right Foot", "situation": "Penalty"},
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 47, "x": 89.0, "y": 52.0, "xg": 0.24, "outcome": "Saved", "body_part": "Header", "situation": "Set Piece"},
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 82, "x": 90.0, "y": 49.0, "xg": 0.25, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play"},
-        {"player_id": "harry-kane", "player_name": "Harry Kane", "minute": 88, "x": 76.0, "y": 48.0, "xg": 0.08, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Open Play"}
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 16, "x": 88.0, "y": 50.0, "xg": 0.32, "outcome": "Goal", "body_part": "Right Foot", "situation": "Penalty" },
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 47, "x": 89.0, "y": 52.0, "xg": 0.24, "outcome": "Saved", "body_part": "Header", "situation": "Set Piece" },
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 82, "x": 90.0, "y": 49.0, "xg": 0.25, "outcome": "Goal", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "harry-kane", "player_name": "Harry Kane", "minute": 88, "x": 76.0, "y": 48.0, "xg": 0.08, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Open Play" }
+      ]
+    },
+    {
+      "player_id": "lionel-messi",
+      "player_name": "Lionel Messi",
+      "team": "Argentina",
+      "total_xg": 1.96,
+      "actual_goals": 2,
+      "sample_size": 8,
+      "zones": [
+        { "zone": "left-inside-box", "shots": 3, "xg": 0.78 },
+        { "zone": "central-pocket", "shots": 3, "xg": 0.67 },
+        { "zone": "set-piece-edge", "shots": 2, "xg": 0.51 }
+      ],
+      "shots": [
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 14, "x": 85.0, "y": 44.0, "xg": 0.22, "outcome": "Goal", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 29, "x": 81.0, "y": 39.0, "xg": 0.17, "outcome": "Saved", "body_part": "Left Foot", "situation": "Open Play" },
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 63, "x": 78.0, "y": 50.0, "xg": 0.11, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Set Piece" },
+        { "player_id": "lionel-messi", "player_name": "Lionel Messi", "minute": 87, "x": 89.0, "y": 47.0, "xg": 0.26, "outcome": "Goal", "body_part": "Left Foot", "situation": "Cutback" }
+      ]
+    },
+    {
+      "player_id": "bruno-fernandes",
+      "player_name": "Bruno Fernandes",
+      "team": "Portugal",
+      "total_xg": 1.44,
+      "actual_goals": 1,
+      "sample_size": 7,
+      "zones": [
+        { "zone": "central-pocket", "shots": 3, "xg": 0.52 },
+        { "zone": "right-inside-box", "shots": 2, "xg": 0.47 },
+        { "zone": "set-piece-edge", "shots": 2, "xg": 0.45 }
+      ],
+      "shots": [
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 22, "x": 84.0, "y": 46.0, "xg": 0.18, "outcome": "Goal", "body_part": "Right Foot", "situation": "Set Piece" },
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 36, "x": 79.0, "y": 48.0, "xg": 0.12, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 58, "x": 82.0, "y": 54.0, "xg": 0.17, "outcome": "Blocked", "body_part": "Right Foot", "situation": "Cutback" },
+        { "player_id": "bruno-fernandes", "player_name": "Bruno Fernandes", "minute": 78, "x": 75.0, "y": 49.0, "xg": 0.09, "outcome": "Off Target", "body_part": "Right Foot", "situation": "Open Play" }
+      ]
+    },
+    {
+      "player_id": "christian-pulisic",
+      "player_name": "Christian Pulisic",
+      "team": "United States",
+      "total_xg": 1.38,
+      "actual_goals": 2,
+      "sample_size": 6,
+      "zones": [
+        { "zone": "left-inside-box", "shots": 2, "xg": 0.39 },
+        { "zone": "central-box", "shots": 2, "xg": 0.47 },
+        { "zone": "right-channel", "shots": 2, "xg": 0.52 }
+      ],
+      "shots": [
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 19, "x": 84.0, "y": 45.0, "xg": 0.17, "outcome": "Goal", "body_part": "Right Foot", "situation": "Transition" },
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 49, "x": 80.0, "y": 43.0, "xg": 0.14, "outcome": "Saved", "body_part": "Right Foot", "situation": "Open Play" },
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 68, "x": 77.0, "y": 55.0, "xg": 0.1, "outcome": "Blocked", "body_part": "Left Foot", "situation": "Counter" },
+        { "player_id": "christian-pulisic", "player_name": "Christian Pulisic", "minute": 83, "x": 88.0, "y": 41.0, "xg": 0.24, "outcome": "Goal", "body_part": "Right Foot", "situation": "Cutback" }
       ]
     }
   ]
 }
-

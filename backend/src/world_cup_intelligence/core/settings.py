@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import tempfile
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -53,6 +54,22 @@ def _normalize_tracking_uri(raw_uri: str) -> str:
     return Path(raw_uri).resolve().as_uri()
 
 
+def _candidate_is_writable(candidate: Path) -> bool:
+    probe = candidate / ".write-test"
+    try:
+        candidate.mkdir(parents=True, exist_ok=True)
+        probe.write_text("ok", encoding="utf-8")
+        probe.unlink()
+        return True
+    except OSError:
+        try:
+            if probe.exists():
+                probe.unlink()
+        except OSError:
+            pass
+        return False
+
+
 def _resolve_runtime_root(repo: Path) -> Path:
     candidates: list[Path] = []
     explicit_runtime = _env_value("WCI_RUNTIME_DIR")
@@ -63,13 +80,15 @@ def _resolve_runtime_root(repo: Path) -> Path:
     if local_app_data:
         candidates.append(Path(local_app_data) / "world-cup-intelligence")
 
+    candidates.append(Path(tempfile.gettempdir()) / "world-cup-intelligence")
     candidates.append(repo / ".runtime")
 
     last_error: OSError | None = None
     for candidate in candidates:
         try:
-            candidate.mkdir(parents=True, exist_ok=True)
-            return candidate
+            if _candidate_is_writable(candidate):
+                return candidate
+            last_error = PermissionError(f"Runtime directory is not writable: {candidate}")
         except OSError as exc:
             last_error = exc
 
@@ -79,9 +98,12 @@ def _resolve_runtime_root(repo: Path) -> Path:
 
 
 def _default_tracking_uri(repo: Path, runtime_root: Path, mlruns_dir: Path) -> str:
-    if runtime_root.is_relative_to(repo):
-        return mlruns_dir.resolve().as_uri()
-    return f"sqlite:///{(mlruns_dir / 'mlflow.db').resolve().as_posix()}"
+    try:
+        runtime_root.resolve().relative_to(repo.resolve())
+    except ValueError:
+        database_path = (runtime_root / "mlflow.db").resolve()
+        return f"sqlite:///{database_path.as_posix()}"
+    return mlruns_dir.resolve().as_uri()
 
 
 @lru_cache(maxsize=1)

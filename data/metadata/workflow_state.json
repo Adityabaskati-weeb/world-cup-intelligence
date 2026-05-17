@@ -111,6 +111,480 @@
           "finished_at": "2026-05-17T09:26:12.868922+00:00"
         }
       ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T09:51:36.829943+00:00",
+      "finished_at": "2026-05-17T09:51:36.829993+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T09:51:36.829964+00:00",
+          "finished_at": "2026-05-17T09:51:36.829981+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_match_model",
+      "status": "completed",
+      "started_at": "2026-05-17T09:51:48.297660+00:00",
+      "finished_at": "2026-05-17T09:51:48.956348+00:00",
+      "steps": [
+        {
+          "step": "train_match_model",
+          "status": "completed",
+          "started_at": "2026-05-17T09:51:48.297673+00:00",
+          "finished_at": "2026-05-17T09:51:48.956232+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_xg_model",
+      "status": "completed",
+      "started_at": "2026-05-17T09:51:57.614255+00:00",
+      "finished_at": "2026-05-17T09:51:58.301989+00:00",
+      "steps": [
+        {
+          "step": "train_xg_model",
+          "status": "completed",
+          "started_at": "2026-05-17T09:51:57.614273+00:00",
+          "finished_at": "2026-05-17T09:51:58.301855+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_penalty_model",
+      "status": "completed",
+      "started_at": "2026-05-17T09:52:06.997362+00:00",
+      "finished_at": "2026-05-17T09:52:07.744209+00:00",
+      "steps": [
+        {
+          "step": "train_penalty_model",
+          "status": "completed",
+          "started_at": "2026-05-17T09:52:06.997375+00:00",
+          "finished_at": "2026-05-17T09:52:07.744120+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T09:57:28.869755+00:00",
+      "finished_at": "2026-05-17T09:57:28.869783+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T09:57:28.869765+00:00",
+          "finished_at": "2026-05-17T09:57:28.869774+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:00:31.766596+00:00",
+      "finished_at": "2026-05-17T10:00:31.766624+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:00:31.766606+00:00",
+          "finished_at": "2026-05-17T10:00:31.766616+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:00:57.891358+00:00",
+      "finished_at": "2026-05-17T10:00:57.891387+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:00:57.891372+00:00",
+          "finished_at": "2026-05-17T10:00:57.891380+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:02:42.072855+00:00",
+      "finished_at": "2026-05-17T10:02:42.072963+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:02:42.072873+00:00",
+          "finished_at": "2026-05-17T10:02:42.072884+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "refresh_all",
+      "status": "completed",
+      "started_at": "2026-05-17T10:02:53.507254+00:00",
+      "finished_at": "2026-05-17T10:02:57.159917+00:00",
+      "steps": [
+        {
+          "step": "tournament_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T10:02:53.507267+00:00",
+          "finished_at": "2026-05-17T10:02:54.079606+00:00"
+        },
+        {
+          "step": "international_results",
+          "status": "completed",
+          "started_at": "2026-05-17T10:02:54.079748+00:00",
+          "finished_at": "2026-05-17T10:02:54.960947+00:00"
+        },
+        {
+          "step": "statsbomb_open_data",
+          "status": "completed",
+          "started_at": "2026-05-17T10:02:54.961069+00:00",
+          "finished_at": "2026-05-17T10:02:57.159218+00:00"
+        },
+        {
+          "step": "football_data_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T10:02:57.159339+00:00",
+          "finished_at": "2026-05-17T10:02:57.159856+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:24:29.249072+00:00",
+      "finished_at": "2026-05-17T10:24:29.249103+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:24:29.249086+00:00",
+          "finished_at": "2026-05-17T10:24:29.249095+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:25:39.660078+00:00",
+      "finished_at": "2026-05-17T10:25:39.660110+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:25:39.660092+00:00",
+          "finished_at": "2026-05-17T10:25:39.660102+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:35:31.805300+00:00",
+      "finished_at": "2026-05-17T10:35:31.805334+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:35:31.805315+00:00",
+          "finished_at": "2026-05-17T10:35:31.805325+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_match_model",
+      "status": "completed",
+      "started_at": "2026-05-17T10:35:47.592562+00:00",
+      "finished_at": "2026-05-17T10:35:48.808388+00:00",
+      "steps": [
+        {
+          "step": "train_match_model",
+          "status": "completed",
+          "started_at": "2026-05-17T10:35:47.592580+00:00",
+          "finished_at": "2026-05-17T10:35:48.808299+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_penalty_model",
+      "status": "completed",
+      "started_at": "2026-05-17T10:35:58.026702+00:00",
+      "finished_at": "2026-05-17T10:36:00.171613+00:00",
+      "steps": [
+        {
+          "step": "train_penalty_model",
+          "status": "completed",
+          "started_at": "2026-05-17T10:35:58.026724+00:00",
+          "finished_at": "2026-05-17T10:36:00.171470+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_xg_model",
+      "status": "completed",
+      "started_at": "2026-05-17T10:36:22.699869+00:00",
+      "finished_at": "2026-05-17T10:36:24.245952+00:00",
+      "steps": [
+        {
+          "step": "train_xg_model",
+          "status": "completed",
+          "started_at": "2026-05-17T10:36:22.699889+00:00",
+          "finished_at": "2026-05-17T10:36:24.245852+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "refresh_all",
+      "status": "completed",
+      "started_at": "2026-05-17T10:36:36.517129+00:00",
+      "finished_at": "2026-05-17T10:36:38.999791+00:00",
+      "steps": [
+        {
+          "step": "tournament_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T10:36:36.517149+00:00",
+          "finished_at": "2026-05-17T10:36:36.916155+00:00"
+        },
+        {
+          "step": "international_results",
+          "status": "completed",
+          "started_at": "2026-05-17T10:36:36.916290+00:00",
+          "finished_at": "2026-05-17T10:36:37.745297+00:00"
+        },
+        {
+          "step": "statsbomb_open_data",
+          "status": "completed",
+          "started_at": "2026-05-17T10:36:37.745422+00:00",
+          "finished_at": "2026-05-17T10:36:38.999357+00:00"
+        },
+        {
+          "step": "football_data_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T10:36:38.999507+00:00",
+          "finished_at": "2026-05-17T10:36:38.999719+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:38:29.506815+00:00",
+      "finished_at": "2026-05-17T10:38:29.506859+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:38:29.506832+00:00",
+          "finished_at": "2026-05-17T10:38:29.506846+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_match_model",
+      "status": "completed",
+      "started_at": "2026-05-17T10:38:42.561686+00:00",
+      "finished_at": "2026-05-17T10:38:44.327863+00:00",
+      "steps": [
+        {
+          "step": "train_match_model",
+          "status": "completed",
+          "started_at": "2026-05-17T10:38:42.561705+00:00",
+          "finished_at": "2026-05-17T10:38:44.327744+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T10:39:31.289767+00:00",
+      "finished_at": "2026-05-17T10:39:31.289818+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T10:39:31.289784+00:00",
+          "finished_at": "2026-05-17T10:39:31.289804+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T12:04:13.934023+00:00",
+      "finished_at": "2026-05-17T12:04:13.934052+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T12:04:13.934034+00:00",
+          "finished_at": "2026-05-17T12:04:13.934044+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T12:06:22.704549+00:00",
+      "finished_at": "2026-05-17T12:06:22.704577+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:22.704560+00:00",
+          "finished_at": "2026-05-17T12:06:22.704569+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_match_model",
+      "status": "completed",
+      "started_at": "2026-05-17T12:06:59.437399+00:00",
+      "finished_at": "2026-05-17T12:07:01.294163+00:00",
+      "steps": [
+        {
+          "step": "train_match_model",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:59.437415+00:00",
+          "finished_at": "2026-05-17T12:07:01.294021+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_xg_model",
+      "status": "completed",
+      "started_at": "2026-05-17T12:06:59.437177+00:00",
+      "finished_at": "2026-05-17T12:07:01.842837+00:00",
+      "steps": [
+        {
+          "step": "train_xg_model",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:59.437192+00:00",
+          "finished_at": "2026-05-17T12:07:01.842715+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "train_penalty_model",
+      "status": "completed",
+      "started_at": "2026-05-17T12:06:59.477466+00:00",
+      "finished_at": "2026-05-17T12:07:02.632851+00:00",
+      "steps": [
+        {
+          "step": "train_penalty_model",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:59.477486+00:00",
+          "finished_at": "2026-05-17T12:07:02.632723+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "refresh_all",
+      "status": "completed",
+      "started_at": "2026-05-17T12:06:57.144357+00:00",
+      "finished_at": "2026-05-17T12:07:03.263075+00:00",
+      "steps": [
+        {
+          "step": "tournament_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:57.144377+00:00",
+          "finished_at": "2026-05-17T12:06:59.190682+00:00"
+        },
+        {
+          "step": "international_results",
+          "status": "completed",
+          "started_at": "2026-05-17T12:06:59.190808+00:00",
+          "finished_at": "2026-05-17T12:07:01.221199+00:00"
+        },
+        {
+          "step": "statsbomb_open_data",
+          "status": "completed",
+          "started_at": "2026-05-17T12:07:01.221346+00:00",
+          "finished_at": "2026-05-17T12:07:03.262676+00:00"
+        },
+        {
+          "step": "football_data_snapshot",
+          "status": "completed",
+          "started_at": "2026-05-17T12:07:03.262819+00:00",
+          "finished_at": "2026-05-17T12:07:03.263005+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T12:15:55.019476+00:00",
+      "finished_at": "2026-05-17T12:15:55.019547+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T12:15:55.019494+00:00",
+          "finished_at": "2026-05-17T12:15:55.019513+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T12:37:14.693734+00:00",
+      "finished_at": "2026-05-17T12:37:14.693763+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T12:37:14.693745+00:00",
+          "finished_at": "2026-05-17T12:37:14.693755+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T12:59:29.978611+00:00",
+      "finished_at": "2026-05-17T12:59:29.978654+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T12:59:29.978626+00:00",
+          "finished_at": "2026-05-17T12:59:29.978641+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T13:49:31.832539+00:00",
+      "finished_at": "2026-05-17T13:49:31.832578+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T13:49:31.832553+00:00",
+          "finished_at": "2026-05-17T13:49:31.832566+00:00"
+        }
+      ]
+    },
+    {
+      "workflow_name": "unit_test_workflow",
+      "status": "completed",
+      "started_at": "2026-05-17T14:21:31.005350+00:00",
+      "finished_at": "2026-05-17T14:21:31.005397+00:00",
+      "steps": [
+        {
+          "step": "noop_step",
+          "status": "completed",
+          "started_at": "2026-05-17T14:21:31.005366+00:00",
+          "finished_at": "2026-05-17T14:21:31.005383+00:00"
+        }
+      ]
     }
   ]
 }

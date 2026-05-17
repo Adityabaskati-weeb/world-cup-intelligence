@@ -7,16 +7,45 @@ from world_cup_intelligence.services.training import train_penalty_models
 
 
 def synthetic_penalty_frame() -> pd.DataFrame:
-    return pd.DataFrame(
-        [
-            {"pressure": 0.80, "footedness_code": 1, "keeper_bias": 0.35, "match_state": 1, "target_zone": 2, "scored": 1},
-            {"pressure": 0.75, "footedness_code": 0, "keeper_bias": 0.45, "match_state": 0, "target_zone": 0, "scored": 0},
-            {"pressure": 0.65, "footedness_code": 1, "keeper_bias": 0.20, "match_state": -1, "target_zone": 1, "scored": 1},
-            {"pressure": 0.90, "footedness_code": 1, "keeper_bias": 0.55, "match_state": 1, "target_zone": 2, "scored": 0},
-            {"pressure": 0.55, "footedness_code": 0, "keeper_bias": 0.18, "match_state": 0, "target_zone": 1, "scored": 1},
-            {"pressure": 0.70, "footedness_code": 1, "keeper_bias": 0.30, "match_state": 0, "target_zone": 2, "scored": 1},
-        ]
-    )
+    rows: list[dict[str, float | int]] = []
+    for cycle in range(8):
+        rows.extend(
+            [
+                {
+                    "pressure": 0.78 + cycle * 0.01,
+                    "footedness_code": 1,
+                    "keeper_bias": 0.32 + cycle * 0.01,
+                    "match_state": 1,
+                    "target_zone": "low-right",
+                    "scored": 1 if cycle % 4 else 0,
+                },
+                {
+                    "pressure": 0.62 + cycle * 0.015,
+                    "footedness_code": 0,
+                    "keeper_bias": 0.18 + cycle * 0.008,
+                    "match_state": 0,
+                    "target_zone": "low-left",
+                    "scored": 1 if cycle % 3 else 0,
+                },
+                {
+                    "pressure": 0.71 + cycle * 0.012,
+                    "footedness_code": cycle % 2,
+                    "keeper_bias": 0.42 + cycle * 0.01,
+                    "match_state": -1 if cycle % 2 else 0,
+                    "target_zone": "high-right",
+                    "scored": 0 if cycle % 3 else 1,
+                },
+                {
+                    "pressure": 0.58 + cycle * 0.008,
+                    "footedness_code": 0,
+                    "keeper_bias": 0.24 + cycle * 0.009,
+                    "match_state": 1 if cycle % 2 else -1,
+                    "target_zone": "high-left",
+                    "scored": 1 if cycle % 5 else 0,
+                },
+            ]
+        )
+    return pd.DataFrame(rows)
 
 
 if __name__ == "__main__":

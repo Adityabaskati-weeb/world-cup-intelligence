@@ -76,11 +76,23 @@ class SnapshotRepository:
     def players(self) -> list[dict[str, Any]]:
         return self.xg_profiles()["players"]
 
+    def xg_teams(self) -> list[dict[str, Any]]:
+        return self.xg_profiles()["teams"]
+
     def team_lookup(self) -> dict[str, dict[str, Any]]:
         return {team["name"]: team for team in self.teams()}
 
     def player_lookup(self) -> dict[str, dict[str, Any]]:
         return {player["player_id"]: player for player in self.players()}
 
+    def kicker_lookup(self) -> dict[str, dict[str, Any]]:
+        return {kicker["player_id"]: kicker for kicker in self.penalty_profiles()["kickers"]}
+
     def keeper_lookup(self) -> dict[str, dict[str, Any]]:
         return {keeper["keeper_id"]: keeper for keeper in self.penalty_profiles()["keepers"]}
+
+    def kicker_for_team(self, team_name: str) -> dict[str, Any] | None:
+        return next((kicker for kicker in self.penalty_profiles()["kickers"] if kicker.get("team") == team_name), None)
+
+    def keeper_for_team(self, team_name: str) -> dict[str, Any] | None:
+        return next((keeper for keeper in self.penalty_profiles()["keepers"] if keeper.get("team") == team_name), None)

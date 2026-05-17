@@ -3,6 +3,9 @@
     {
       "player_id": "harry-kane",
       "player_name": "Harry Kane",
+      "team": "England",
+      "preferred_foot": "right",
+      "footedness_code": 1,
       "preferred_zone": "low-right",
       "conversion_rate": 0.87,
       "sample_size": 18,
@@ -11,6 +14,9 @@
     {
       "player_id": "mbappe",
       "player_name": "Kylian Mbappe",
+      "team": "France",
+      "preferred_foot": "right",
+      "footedness_code": 1,
       "preferred_zone": "high-right",
       "conversion_rate": 0.84,
       "sample_size": 15,
@@ -19,6 +25,9 @@
     {
       "player_id": "lionel-messi",
       "player_name": "Lionel Messi",
+      "team": "Argentina",
+      "preferred_foot": "left",
+      "footedness_code": 0,
       "preferred_zone": "low-left",
       "conversion_rate": 0.86,
       "sample_size": 24,
@@ -27,6 +36,9 @@
     {
       "player_id": "bruno-fernandes",
       "player_name": "Bruno Fernandes",
+      "team": "Portugal",
+      "preferred_foot": "right",
+      "footedness_code": 1,
       "preferred_zone": "low-right",
       "conversion_rate": 0.85,
       "sample_size": 19,
@@ -35,6 +47,9 @@
     {
       "player_id": "christian-pulisic",
       "player_name": "Christian Pulisic",
+      "team": "United States",
+      "preferred_foot": "right",
+      "footedness_code": 1,
       "preferred_zone": "high-left",
       "conversion_rate": 0.79,
       "sample_size": 11,
@@ -45,30 +60,35 @@
     {
       "keeper_id": "emiliano-martinez",
       "keeper_name": "Emiliano Martinez",
+      "team": "Argentina",
       "save_rate": 0.29,
       "save_bias": {"low-left": 0.21, "low-right": 0.18, "high-left": 0.14, "high-right": 0.12}
     },
     {
       "keeper_id": "mike-maignan",
       "keeper_name": "Mike Maignan",
+      "team": "France",
       "save_rate": 0.24,
       "save_bias": {"low-left": 0.14, "low-right": 0.16, "high-left": 0.12, "high-right": 0.18}
     },
     {
       "keeper_id": "diogo-costa",
       "keeper_name": "Diogo Costa",
+      "team": "Portugal",
       "save_rate": 0.27,
       "save_bias": {"low-left": 0.16, "low-right": 0.2, "high-left": 0.11, "high-right": 0.16}
     },
     {
       "keeper_id": "jordan-pickford",
       "keeper_name": "Jordan Pickford",
+      "team": "England",
       "save_rate": 0.23,
       "save_bias": {"low-left": 0.15, "low-right": 0.17, "high-left": 0.11, "high-right": 0.14}
     },
     {
       "keeper_id": "matt-turner",
       "keeper_name": "Matt Turner",
+      "team": "United States",
       "save_rate": 0.2,
       "save_bias": {"low-left": 0.13, "low-right": 0.14, "high-left": 0.09, "high-right": 0.11}
     }

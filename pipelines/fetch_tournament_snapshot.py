@@ -11,8 +11,15 @@ OPENFOOTBALL_URL = "https://raw.githubusercontent.com/openfootball/worldcup.json
 
 
 def fetch_tournament_snapshot() -> None:
-    response = requests.get(OPENFOOTBALL_URL, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(OPENFOOTBALL_URL, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException:
+        if TARGET.exists():
+            print(f"Skipping tournament snapshot fetch: network request failed. Keeping existing snapshot at {TARGET}")
+            return
+        raise
+
     payload = response.json()
     TARGET.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"Wrote tournament snapshot to {TARGET}")
@@ -20,4 +27,3 @@ def fetch_tournament_snapshot() -> None:
 
 if __name__ == "__main__":
     fetch_tournament_snapshot()
-

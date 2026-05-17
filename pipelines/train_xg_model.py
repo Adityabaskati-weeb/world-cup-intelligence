@@ -7,16 +7,33 @@ from world_cup_intelligence.services.training import train_xg_model
 
 
 def synthetic_xg_frame() -> pd.DataFrame:
-    return pd.DataFrame(
-        [
-            {"distance": 9.5, "angle": 0.65, "minute": 18, "pressure": 0.15, "game_state": 0, "body_part_code": 1, "shot_type_code": 0, "is_goal": 1},
-            {"distance": 17.0, "angle": 0.30, "minute": 71, "pressure": 0.55, "game_state": 1, "body_part_code": 2, "shot_type_code": 1, "is_goal": 0},
-            {"distance": 13.0, "angle": 0.50, "minute": 42, "pressure": 0.22, "game_state": 0, "body_part_code": 1, "shot_type_code": 0, "is_goal": 1},
-            {"distance": 22.0, "angle": 0.18, "minute": 83, "pressure": 0.60, "game_state": -1, "body_part_code": 0, "shot_type_code": 2, "is_goal": 0},
-            {"distance": 7.0, "angle": 0.72, "minute": 54, "pressure": 0.10, "game_state": 0, "body_part_code": 1, "shot_type_code": 0, "is_goal": 1},
-            {"distance": 19.5, "angle": 0.24, "minute": 63, "pressure": 0.35, "game_state": 1, "body_part_code": 0, "shot_type_code": 1, "is_goal": 0},
-        ]
-    )
+    rows: list[dict[str, float | int]] = []
+    for cycle in range(12):
+        rows.extend(
+            [
+                {
+                    "distance": 8.0 + cycle * 0.35,
+                    "angle": 0.74 - cycle * 0.015,
+                    "minute": 10 + cycle * 3,
+                    "pressure": 0.10 + cycle * 0.01,
+                    "game_state": 0 if cycle % 3 else 1,
+                    "body_part_code": 1,
+                    "shot_type_code": 0,
+                    "is_goal": 1,
+                },
+                {
+                    "distance": 18.5 + cycle * 0.4,
+                    "angle": 0.26 - cycle * 0.004,
+                    "minute": 22 + cycle * 4,
+                    "pressure": 0.34 + cycle * 0.015,
+                    "game_state": -1 if cycle % 2 else 1,
+                    "body_part_code": 0 if cycle % 2 else 2,
+                    "shot_type_code": 1 if cycle % 3 else 2,
+                    "is_goal": 0,
+                },
+            ]
+        )
+    return pd.DataFrame(rows)
 
 
 if __name__ == "__main__":

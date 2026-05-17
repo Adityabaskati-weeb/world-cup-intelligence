@@ -1,6 +1,6 @@
-from world_cup_intelligence.config import artifact_path
-from world_cup_intelligence.services.training import train_match_model, train_penalty_models, train_xg_model
 import pandas as pd
+
+from world_cup_intelligence.services.training import load_artifact, train_match_model, train_penalty_models, train_xg_model
 
 
 def synthetic_match_frame() -> pd.DataFrame:
@@ -112,11 +112,31 @@ def synthetic_penalty_frame() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def test_training_smoke_creates_artifacts() -> None:
-    train_match_model(synthetic_match_frame())
-    train_xg_model(synthetic_xg_frame())
-    train_penalty_models(synthetic_penalty_frame())
+def test_match_training_logs_split_metrics() -> None:
+    artifact = train_match_model(synthetic_match_frame())
+    payload = load_artifact("match_model.joblib")
+    assert payload is not None
+    assert artifact.version == "match-logreg-v3"
+    assert payload["split_sizes"]["train"] + payload["split_sizes"]["validation"] + payload["split_sizes"]["test"] == payload["sample_size"]
+    assert "test_accuracy" in payload["metrics"]
+    assert "best_params" in payload
 
-    assert artifact_path("match_model.joblib").exists()
-    assert artifact_path("xg_model.joblib").exists()
-    assert artifact_path("penalty_model.joblib").exists()
+
+def test_xg_training_logs_generalization_metrics() -> None:
+    artifact = train_xg_model(synthetic_xg_frame())
+    payload = load_artifact("xg_model.joblib")
+    assert payload is not None
+    assert artifact.version == "xg-xgboost-v3"
+    assert "generalization_gap_macro_f1" in payload["metrics"]
+    assert payload["split_sizes"]["test"] > 0
+
+
+def test_penalty_training_persists_dual_model_metadata() -> None:
+    artifact = train_penalty_models(synthetic_penalty_frame())
+    payload = load_artifact("penalty_model.joblib")
+    assert payload is not None
+    assert artifact.version == "penalty-xgboost-v3"
+    assert "placement" in payload["best_params"]
+    assert "conversion" in payload["best_params"]
+    assert "placement_test_accuracy" in payload["metrics"]
+    assert "conversion_test_accuracy" in payload["metrics"]
